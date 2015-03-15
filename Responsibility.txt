@@ -1,0 +1,29 @@
+Resposibility setiap class
+
+Class Calculator
+	Kelas berguna sebagai pengendali utama. Berfungsi untuk menerima masukan input dari user. Kelas juga berguna untuk melakukan perhitungan (Calculate()).
+
+Class Parser
+	Berguna untuk melakukan pemecahan masukan string menjadi ekspresi
+	
+Class Token
+	Sebuah kelas abstrak untuk merepresentasikan elemen masukan yang terbagi atas bilangan operator dan romawi
+	Class Bilangan
+		Sebuah kelas untuk merepresentasikan sebuah bilangan dalam bentuk angka arab atau romawi
+	Class Operator
+		Sebuah Kelas untuk melakukan representasi terhadap operator matematika dan logika
+	Class Perintah
+		Kelas yang menjadi sebuah representasi dari perintah yang akan diberikan user (Set, Undo , Redo, ShowAll,ShowMem<n>, Save)
+
+Class Memori
+	Kelas yang menyimpan ekspresi yang sudah dieksekusi / dihitung oleh progam
+	
+Class Expresion
+	Kelas untuk merepresentasikan sebuah ekspresi yang merupakan array of Token
+	
+Class Vector
+	Implementasi struktur data array dinamis STL C++ yang dibutuhkan. Digunakan untuk array of token dan array of Ekspresi
+	
+Class Stack
+	Implementasi struktur data stack dinamis STL C++ yang dibutuhkan. Digunakan untuk menlakukan kalkulasi kalkulator.
+	
