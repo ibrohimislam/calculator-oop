@@ -23,6 +23,7 @@ Undo
 [berhasil]
 Redo
 [not a natural number]
+Halo
 
 
 test Logic
