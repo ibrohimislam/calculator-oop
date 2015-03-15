@@ -1,4 +1,4 @@
-#include "EnumToken.h"
+#include "Enum.h"
 #include <iostream>
 #include "Token.h"
 #include "Bilangan.h"
@@ -31,4 +31,7 @@ long double Bilangan :: Display (EnumBilangan T){
 			cout << "IX";
 		} 
 	}
+}
+
+Bilangan:: ctor(string S){
 }

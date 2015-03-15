@@ -5,10 +5,10 @@
 EnumType Arab:: GetType(){
 	return Bilangan;
 }
-Arab:: Display(){
+void Arab:: Display(){
 	cout << Value;
 }
-Arab:: Display(EnumBilangan T){
+void Arab:: Display(EnumBilangan T){
 	
 	cout << Value;
 }
