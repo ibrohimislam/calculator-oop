@@ -6,9 +6,7 @@
 #define _BILANGAN_H_
 class Bilangan: public Token{
 	public:
-		ctor(string S);
-		Display(EnumBilangan T);
-		virtual long double GetValue() ;//deffered
+		virtual long double GetValue() = 0;//deffered
 	private:
 };
 
