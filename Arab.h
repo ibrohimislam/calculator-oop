@@ -4,7 +4,7 @@
 #ifndef _ARAB_H_
 #define _ARAB_H_
 
-class Arab: public Bilang{
+class Arab: public Bilangan{
 	public:
 		Arab();
 		Arab(string);
