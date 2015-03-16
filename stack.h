@@ -4,14 +4,15 @@
 #include <cstdlib>
 
 template<class T>
-class stack {
+class stack 
+{
 	struct node {
 		T info;
 		node* next;
 	};
 	typedef node infotype;
 
-public :
+public:
 	stack();
 	stack(const stack&);
 	stack& operator= (const stack&);
@@ -22,7 +23,7 @@ public :
 	int size();
 	bool empty();
 
-private :
+private:
 	int Size;
 	infotype* topElmt;
 };
