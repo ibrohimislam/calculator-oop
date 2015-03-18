@@ -19,7 +19,7 @@ public:
 	void SetMathLogic(EnumMathLogic Mode);
 	double CalculatePostfix(Expression& E);
 	void ParseInfix(Expression& E);
-	double CalculateAtom(double a, double b, Operator o);
+	double CalculateAtom(double a, double b, Operator* o);
 
 private:
 	EnumSintaks ModeSintaks;

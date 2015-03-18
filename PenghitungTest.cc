@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
 	Penghitung p;
-	p.SetSintaks(infix);
+	p.SetSintaks(postfix);
 	p.SetMathLogic(math);
 
 	string s;

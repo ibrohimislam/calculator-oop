@@ -12,9 +12,13 @@ Penghitung::~Penghitung() {}
 // operator= tidak diperlukan karena tidak ada assignment
 
 double Penghitung::Calculate(Expression E) {
-	if(ModeMathLogic = logic) {
+	std::cout << ModeSintaks << std::endl;
+	if(ModeMathLogic == logic) {
+		std::cout << "Logic" << std::endl;
 		ParseInfix(E);
 	} else {
+		std::cout << "Math" << std::endl;
+
 		switch (ModeSintaks) {
 			infix : ParseInfix(E); break;
 			prefix : E.InvertExpression(); break;
@@ -32,24 +36,24 @@ void Penghitung::SetMathLogic(EnumMathLogic Mode) {
 	ModeMathLogic = Mode;
 }
 
-double Penghitung::CalculateAtom(double a, double b, Operator o) {
-	if (o.GetJenisOperator() == Plus) 
+double Penghitung::CalculateAtom(double a, double b, Operator* o) {
+	if (o->GetJenisOperator() == Plus) 
 		return a + b;
-	else if (o.GetJenisOperator() == Minus) 
+	else if (o->GetJenisOperator() == Minus) 
 		return a - b;
-	else if (o.GetJenisOperator() == bagi) 
+	else if (o->GetJenisOperator() == bagi) 
 		return a / b;
-	else if (o.GetJenisOperator() == kali) 
+	else if (o->GetJenisOperator() == kali) 
 		return a * b;
-	else if (o.GetJenisOperator() == Div) 
+	else if (o->GetJenisOperator() == Div) 
 		return int(a / b);
-	else if (o.GetJenisOperator() == Mod) 
+	else if (o->GetJenisOperator() == Mod) 
 		return a - int(a / b) * b;
-	else if (o.GetJenisOperator() == And) 
+	else if (o->GetJenisOperator() == And) 
 		return int(a) & int(b);
-	else if (o.GetJenisOperator() == Or) 
+	else if (o->GetJenisOperator() == Or) 
 		return int(a) | int(b);
-	else if (o.GetJenisOperator() == Xor) 
+	else if (o->GetJenisOperator() == Xor) 
 		return int(a) ^ int(b);
 }
 	
@@ -60,11 +64,11 @@ double Penghitung::CalculatePostfix(Expression& E) {
 		if (cur->GetType() == opr) {
 			double b2 = s.top(); s.pop();
 			double b1 = s.top(); s.pop();
-			Operator op(cur->Display());
+			Operator *op = (Operator *) cur;
 			s.push(CalculateAtom(b1, b2, op));
 		} else {
-			Arab op(cur->Display());
-			s.push(op.GetValue());
+			Bilangan *op = (Bilangan*) cur;
+			s.push(op->GetValue());
 		}
 	}
 	return s.top();
