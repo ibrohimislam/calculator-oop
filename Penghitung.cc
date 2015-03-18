@@ -1,4 +1,6 @@
+#include "Enum.h"
 #include "Penghitung.h"
+#include "PenghitungException.h"
 
 Penghitung::Penghitung() {}
 
@@ -37,7 +39,7 @@ void Penghitung::SetMathLogic(EnumMathLogic Mode) {
 }
 
 double Penghitung::CalculateAtom(double a, double b, Operator* o) {
-	if (ModeMathLogic == Math)
+	if (ModeMathLogic == math)
 	{
 		if (o->GetJenisOperator() == Plus) 
 			return a + b;
