@@ -1,6 +1,8 @@
 #include "Token.h"
 #include "Bilangan.h"
 #include "Romawi.h"
+#include "BilanganException.h"
+
 #include <iostream>
 #include <cstdlib>
 #include <cassert>
@@ -9,9 +11,6 @@
 
 
 void Romawi:: Display(){
-  
-  std::cout << Value << std::endl;
-
   int val = Value;
   char* hasil = (char*) malloc(1000);
   char* res = hasil;
@@ -82,7 +81,8 @@ Romawi::Romawi(const std::string& s){
   int sum=0; char prev='%';
   for(int i=(s.length()-1); i>=0; i--)
   {
-  	assert(rom_to_int[s[i]]);
+    if (rom_to_int[s[i]]==0)
+      throw BilanganException("Bilangan tidak dikenali.");
 
     if(rom_to_int[s[i]]<sum && (s[i]!=prev))
     {       sum -= rom_to_int[s[i]];

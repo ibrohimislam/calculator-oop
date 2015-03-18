@@ -3,7 +3,6 @@
 
 #include "STL/vector.h"
 #include "Token.h"
-//#include <vector>
 
 using namespace std;
 
@@ -12,11 +11,13 @@ class Expression
 public:
 	//ctor
 	Expression(){}
-	//dtor pada saat dtor semua token yang diberikan kepada expression akan dihancurkan
+	//dtor tidak bertangung jawab kepada token yang diberikan
 	~Expression();
-	//tidak diperlukan nilai cctor dan operator= karena tidak ada assign ekspresi
-	Token* GetToken(int i);
-	int GetLength();
+	//tidak diperlukan nilai cctor karena tidak ada assign ekspresi
+	//operator=
+	Expression& operator= (const Expression& E1);
+	Token* GetToken(int i) const;
+	int GetLength() const;
 	void AddToken(Token* T);
 private:
 	vector<Token*> VectorOfToken;

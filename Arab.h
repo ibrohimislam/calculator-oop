@@ -14,7 +14,6 @@ class Arab: public Bilangan{
 		~Arab(){}
 		//cctor dan operator= tidak pernah dipakai karena tidak mungkin instansiasi
 		double GetValue();
-
 		void Display();
 	private:
 		double Value;

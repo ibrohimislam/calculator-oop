@@ -1,6 +1,7 @@
 #include "Token.h"
 #include "Bilangan.h"
 #include "Arab.h"
+#include "BilanganException.h"
 #include <stdio.h>
 
 void Arab:: Display(){
@@ -22,10 +23,20 @@ Arab:: Arab(const std::string& s) {
 	int i;
 
 	for (i = 0; (i < len) && (s[i] != '.'); ++i)
-		val = val*10 + (s[i] - '0');
+	{
+		if (s[i]>='0' && s[i]<='9')
+			val = val*10 + (s[i] - '0');
+		else
+			throw BilanganException("Bilangan tidak dikenali.");
+	}
 
 	for (int j = i+1; j<len; j++)
-		frac = frac*10 + (s[j] - '0');
+	{
+		if (s[i]>='0' && s[i]<='9')
+			frac = frac*10 + (s[j] - '0');
+		else
+			throw BilanganException("Bilangan tidak dikenali.");
+	}
 
 	int pembagi=1;
 
