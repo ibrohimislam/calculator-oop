@@ -37,24 +37,36 @@ void Penghitung::SetMathLogic(EnumMathLogic Mode) {
 }
 
 double Penghitung::CalculateAtom(double a, double b, Operator* o) {
-	if (o->GetJenisOperator() == Plus) 
-		return a + b;
-	else if (o->GetJenisOperator() == Minus) 
-		return a - b;
-	else if (o->GetJenisOperator() == bagi) 
-		return a / b;
-	else if (o->GetJenisOperator() == kali) 
-		return a * b;
-	else if (o->GetJenisOperator() == Div) 
-		return int(a / b);
-	else if (o->GetJenisOperator() == Mod) 
-		return a - int(a / b) * b;
-	else if (o->GetJenisOperator() == And) 
-		return int(a) & int(b);
-	else if (o->GetJenisOperator() == Or) 
-		return int(a) | int(b);
-	else if (o->GetJenisOperator() == Xor) 
-		return int(a) ^ int(b);
+	if (ModeMathLogic == Math)
+	{
+		if (o->GetJenisOperator() == Plus) 
+			return a + b;
+		else if (o->GetJenisOperator() == Minus) 
+			return a - b;
+		else if (o->GetJenisOperator() == bagi) 
+			return a / b;
+		else if (o->GetJenisOperator() == kali) 
+			return a * b;
+		else if (o->GetJenisOperator() == Div) 
+			return int(a / b);
+		else if (o->GetJenisOperator() == Mod) 
+			return a - int(a / b) * b;
+		else
+			throw PenghitungException("Terdapat kesalahan pada ekspresi.");
+			
+	}
+	else
+	{
+		if (o->GetJenisOperator() == And) 
+			return int(a) & int(b);
+		else if (o->GetJenisOperator() == Or) 
+			return int(a) | int(b);
+		else if (o->GetJenisOperator() == Xor) 
+			return int(a) ^ int(b);
+		else
+			throw PenghitungException("Terdapat kesalahan pada ekspresi.");
+	}
+
 }
 	
 double Penghitung::CalculatePostfix(Expression& E) {
