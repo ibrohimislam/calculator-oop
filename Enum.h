@@ -1,26 +1,28 @@
 #ifndef _ENUM_H_
 #define _ENUM_H_
 	enum EnumType{
-		Bilangan,
-		Operator,
-		Perintah
-	}
+		bil,
+		opr,
+		cmd
+	};
 	enum EnumBilangan{
 		arab,
 		romawi,
-	}
+	};
 	enum EnumOperator{
 		plus,
 		minus,
 		bagi,
 		kali,
-		div,
-		mod,
-		and,
-		or,
-		not,
-		xor
-	}
+		Div,
+		Mod,
+		And,
+		Or,
+		Not,
+		Xor,
+		kurungBuka,
+		kurungTutup
+	};
 	enum EnumPerintah {
 		set,
 		undo,
@@ -28,5 +30,5 @@
 		showmem,
 		showall,
 		save
-	}
+	};
 #endif

@@ -1,58 +1,36 @@
 #include "Token.h"
-
+#include <iostream>
+#include <assert.h>
 #include "Perintah.h"
 
-static std::string Perintah::KarakterPerintah = {"+", "-", "/", "*", "div", "mod", "&&", "||", "!", "^"};
+std::string Perintah::KarakterPerintah[] = {"set",
+		"undo",
+		"redo",
+		"showmem",
+		"showall",
+		"save"};
 
 Perintah::Perintah(std::string _s) {
-	if (_s=="+")
-	{
-		JenisPerintah = plus;
-	}
-	else if (_s=="-")
-	{
-		JenisPerintah = minus;
-	}
-	else if (_s=="/")
-	{
-		JenisPerintah = bagi;
-	}
-	else if (_s=="*")
-	{
-		JenisPerintah = kali;
-	}
-	else if (_s=="div")
-	{
-		JenisPerintah = div;
-	}
-	else if (_s=="mod")
-	{
-		JenisPerintah = mod;
-	}
-	else if (_s=="&&")
-	{
-		JenisPerintah = and;
-	}
-	else if (_s=="||")
-	{
-		JenisPerintah = or;
-	}
-	else if (_s=="!")
-	{
-		JenisPerintah = not;
-	}
-	else if (_s=="^"	)
-	{
-		JenisPerintah = xor;
-	}
+	int banyak_perintah = sizeof(KarakterPerintah)/sizeof(std::string);
+	
+	bool ditemukan = false;
+
+	for (int i = 0; (i < banyak_perintah) && (!ditemukan); ++i)
+		if (_s == KarakterPerintah[i]){
+			JenisPerintah = (EnumPerintah)i;
+			ditemukan = true;
+		}
+
+	assert(ditemukan);
 }
 
+
 EnumType Perintah::GetType (){
-	return Perintah;
+	return cmd;
 }
 
 void Perintah::Display(){
-	cout << Perintah::KarakterPerintah[JenisPerintah];
+	std::cout << Perintah::KarakterPerintah[JenisPerintah];
 }
 
 EnumPerintah Perintah:: GetJenisPerintah(){

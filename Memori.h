@@ -1,7 +1,7 @@
 #ifndef _MEM_H_
 #define _MEM_H_ 1
 
-//#include "vector.h"
+#include "vector.h"
 //#include "Expression.h"
 #include <vector>
 
