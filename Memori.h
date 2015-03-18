@@ -2,8 +2,7 @@
 #define _MEM_H_ 1
 
 #include "vector.h"
-//#include "Expression.h"
-#include <vector>
+#include "Expression.h"
 
 using namespace std;
 
