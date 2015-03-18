@@ -1,10 +1,10 @@
 #include "Token.h"
 #include "Bilangan.h"
 #include "Arab.h"
-#include <iostream>
+#include <stdio.h>
 
 void Arab:: Display(){
-	std::cout << Value;
+	printf("%lf", Value);
 }
 
 Arab:: Arab(){
@@ -12,25 +12,32 @@ Arab:: Arab(){
 }
 
 Arab:: Arab(const std::string& s) {
-	long double tval = 0.0;
-	int len = s.length();
-	int temp = 1;
-	
-	for (int i=len; i>=0; i--) {
-		if (s[i]=='.')
-		{
-			tval=tval/temp;
-		}
-		else
-		{
-			tval = tval + (s[i] - '0')*temp;
-			temp = temp*10;
-		}
-	}
+	std::cout << "\"" << s << "\""<< std::endl;
 
-	Value = tval;
+	int val = 0;
+	int frac = 0;
+
+	int len = s.length();
+
+	int i;
+
+	for (i = 0; (i < len) && (s[i] != '.'); ++i)
+		val = val*10 + (s[i] - '0');
+
+	for (int j = i+1; j<len; j++)
+		frac = frac*10 + (s[j] - '0');
+
+	int pembagi=1;
+
+	for (int i = 0; i < (len-i-2); ++i)
+		pembagi = pembagi*10;
+
+	if (i<len-1)
+		Value = double(val)+(double(frac)/double(pembagi));
+	else
+		Value = double(val);
 }
 
-long double Arab:: GetValue(){
+double Arab:: GetValue(){
 	return Value;
 }

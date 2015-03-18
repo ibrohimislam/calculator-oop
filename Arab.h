@@ -13,11 +13,11 @@ class Arab: public Bilangan{
 		//dtor
 		~Arab(){}
 		//cctor dan operator= tidak pernah dipakai karena tidak mungkin instansiasi
-		long double GetValue();
+		double GetValue();
 
 		void Display();
 	private:
-		long double Value;
+		double Value;
 };
 
 #endif

@@ -10,7 +10,7 @@ class Bilangan: public Token{
 	public:
 		virtual void Display() = 0;
 		EnumType GetType();
-		virtual long double GetValue() = 0;//deffered
+		virtual double GetValue() = 0;//deffered
 	private:
 };
 
