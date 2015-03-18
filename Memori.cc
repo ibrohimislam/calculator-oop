@@ -38,7 +38,10 @@ void Memori::AddExpression(const Expression& E){
 		std::cout << "head = length\n";
 		++head;
 		length = head;
+		std::cout << "sapisapisapi\n";
 		VectorOfExpression.push_back(E);
+		std::cout << "memori add expr" << VectorOfExpression[head-1].GetLength() << std::endl;
+
 	}
 }
 
@@ -69,16 +72,18 @@ bool Memori::Undo(int n){
 Expression& Memori::Redo(){
 //Prekondisi head harus lebih kecil dari length	
 	
-	assert (head < length);
+	assert(head < length);
 	++head;
-	return VectorOfExpression[head];
+	std::cout << "redo " << VectorOfExpression[head-1].GetLength() << std::endl;
+
+	return VectorOfExpression[head-1];
 }
 
 void Memori::Save(){
   string str;
   
   fstream fout;
-  fout.open("savedFile.txt");
+  fout.open("savedFile.txt",fstream::out);
 
   	int numEx,numToken;
 	int len = GetLength();
@@ -87,9 +92,12 @@ void Memori::Save(){
 
 		Expression& ExKei = this->GetExpression(numEx);
 		int lenExKei = ExKei.GetLength();
+
+		std::cout << "save " << numEx << " " << lenExKei << std::endl;
+
 		for (numToken = 0; numToken < lenExKei - 1; ++numToken){
 			Token* tempT = ExKei.GetToken(numToken);
-			str = tempT->Display();
+			str = str + tempT->Display();
 			str = str + " ";
 		}
 		//Beri enter pada akhir ekspresi

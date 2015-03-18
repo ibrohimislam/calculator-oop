@@ -42,6 +42,8 @@ int main(){
 	}
 	//tes redo
 	E1 = M1.Redo();
+	cout << "berhasil redo\n";
+	LengthExpr = E1.GetLength();
 	//print hasil redo
 	for (int i = 0; i < LengthExpr; ++i)
 	{
