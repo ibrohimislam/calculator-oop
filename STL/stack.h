@@ -1,5 +1,5 @@
-#ifndef _STL_STACK_H
-#define _STL_STACK_H 1
+#ifndef _STL_STACK_H_
+#define _STL_STACK_H_
 
 #include <cstdlib>
 #include <cstdio>
@@ -14,11 +14,9 @@ public:
 	void printMsg() { printf("Error : %s\n", msg[errCode]); }
 	
 private:
-	static char msg[2][32];
+	char msg[2][32] = {"stack empty", "allocation fail"};
 	int errCode;
 };
-
-char StackExp::msg[2][32] = {"stack empty", "allocation fail"};
 
 /* Kelas stack */
 template<class T>

@@ -1,4 +1,6 @@
+#include "Enum.h"
 #include "Penghitung.h"
+#include "PenghitungException.h"
 
 Penghitung::Penghitung() {}
 
@@ -37,24 +39,36 @@ void Penghitung::SetMathLogic(EnumMathLogic Mode) {
 }
 
 double Penghitung::CalculateAtom(double a, double b, Operator* o) {
-	if (o->GetJenisOperator() == Plus) 
-		return a + b;
-	else if (o->GetJenisOperator() == Minus) 
-		return a - b;
-	else if (o->GetJenisOperator() == bagi) 
-		return a / b;
-	else if (o->GetJenisOperator() == kali) 
-		return a * b;
-	else if (o->GetJenisOperator() == Div) 
-		return int(a / b);
-	else if (o->GetJenisOperator() == Mod) 
-		return a - int(a / b) * b;
-	else if (o->GetJenisOperator() == And) 
-		return int(a) & int(b);
-	else if (o->GetJenisOperator() == Or) 
-		return int(a) | int(b);
-	else if (o->GetJenisOperator() == Xor) 
-		return int(a) ^ int(b);
+	if (ModeMathLogic == math)
+	{
+		if (o->GetJenisOperator() == Plus) 
+			return a + b;
+		else if (o->GetJenisOperator() == Minus) 
+			return a - b;
+		else if (o->GetJenisOperator() == bagi) 
+			return a / b;
+		else if (o->GetJenisOperator() == kali) 
+			return a * b;
+		else if (o->GetJenisOperator() == Div) 
+			return int(a / b);
+		else if (o->GetJenisOperator() == Mod) 
+			return a - int(a / b) * b;
+		else
+			throw PenghitungException("Terdapat kesalahan pada ekspresi.");
+			
+	}
+	else
+	{
+		if (o->GetJenisOperator() == And) 
+			return int(a) & int(b);
+		else if (o->GetJenisOperator() == Or) 
+			return int(a) | int(b);
+		else if (o->GetJenisOperator() == Xor) 
+			return int(a) ^ int(b);
+		else
+			throw PenghitungException("Terdapat kesalahan pada ekspresi.");
+	}
+
 }
 	
 double Penghitung::CalculatePostfix(Expression& E) {
@@ -67,6 +81,7 @@ double Penghitung::CalculatePostfix(Expression& E) {
 			Operator *op = (Operator *) cur;
 			s.push(CalculateAtom(b1, b2, op));
 		} else {
+			if (cur->GetType()!=bil) throw PenghitungException("Terdapat kesalahan pada sintaks.");
 			Bilangan *op = (Bilangan*) cur;
 			s.push(op->GetValue());
 		}
@@ -98,7 +113,6 @@ void Penghitung::ParseInfix(Expression& E) {
 			else if (op.GetJenisOperator() == Not) {		// Not x = x - 2x + 1
 				i++;
 				if (i == E.GetLength()) throw // Expression incomplete
-
 				cur = E.GetToken(i);
 				s2.AddToken(cur);
 				cur = new Arab(cur->Display());
