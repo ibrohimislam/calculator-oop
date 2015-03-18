@@ -4,6 +4,12 @@
 #include "Token.h"
 #include "Bilangan.h"
 #include <string.h>
+#include "Token.h"
+#include "Bilangan.h"
+#include "BilanganException.h"
+#include <stdio.h>
+#include <string>
+#include <sstream>
 
 class Arab: public Bilangan{
 	public:

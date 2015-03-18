@@ -1,8 +1,13 @@
-
 #ifndef _ROMAWI_H_
 #define _ROMAWI_H_
+
+
+#include <iostream>
+#include <cstdlib>
+#include <cassert>
 #include "Token.h"
 #include "Bilangan.h"
+#include "BilanganException.h"
 #include <string>
 #include <cstring>
 

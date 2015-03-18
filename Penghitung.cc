@@ -1,5 +1,4 @@
 #include "Penghitung.h"
-#include "STL/stack.h"
 
 Penghitung::Penghitung() {}
 
@@ -34,9 +33,9 @@ void Penghitung::SetMathLogic(EnumMathLogic Mode) {
 }
 
 double Penghitung::CalculateAtom(double a, double b, Operator o) {
-	if (o.GetJenisOperator() == plus) 
+	if (o.GetJenisOperator() == Plus) 
 		return a + b;
-	else if (o.GetJenisOperator() == minus) 
+	else if (o.GetJenisOperator() == Minus) 
 		return a - b;
 	else if (o.GetJenisOperator() == bagi) 
 		return a / b;
@@ -53,17 +52,19 @@ double Penghitung::CalculateAtom(double a, double b, Operator o) {
 	else if (o.GetJenisOperator() == Xor) 
 		return int(a) ^ int(b);
 }
-
+	
 double Penghitung::CalculatePostfix(Expression& E) {
 	stack<double> s;
 	for (int i = 0; i < E.GetLength(); ++i) {
 		Token* cur = E.GetToken(i);
 		if (cur->GetType() == opr) {
-			double b1 = s.top(); s.pop();
 			double b2 = s.top(); s.pop();
-			s.push(CalculateAtom(b1, b2, (Operator)*cur));
+			double b1 = s.top(); s.pop();
+			Operator op(cur->Display());
+			s.push(CalculateAtom(b1, b2, op));
 		} else {
-			s.push((Bilangan*)cur->GetValue());
+			Arab op(cur->Display());
+			s.push(op.GetValue());
 		}
 	}
 	return s.top();
@@ -76,70 +77,56 @@ void Penghitung::ParseInfix(Expression& E) {
 	for(int i = 0; i < E.GetLength(); ++i) {
 		Token* cur = E.GetToken(i);
 		if (cur->GetType() == bil) {
-			s2.AddToken(bil&);
+			s2.AddToken(cur);
 		} else {
-			if (cur->GetJenisOperator() == kurungBuka) {
-				s1.push(cur&);
+			Operator op(cur->Display());
+			if (op.GetJenisOperator() == kurungBuka) {
+				s1.push(cur);
 			}
-			else if (cur->GetJenisOperator() == kurungTutup) {
-				while (s1.top().GetJenisOperator() != kurungBuka) {
+			else if (op.GetJenisOperator() == kurungTutup) {
+				while ( ( op = Operator( s1.top()->Display() ) ).GetJenisOperator() 
+					!= kurungBuka) {
 					s2.AddToken(s1.top());
 					s1.pop();
 				}
 				s1.pop();	// pop kurungBuka
 			}
-			else if (cur->GetJenisOperator() == Not) {		// Not x = x - 2x + 1
+			else if (op.GetJenisOperator() == Not) {		// Not x = x - 2x + 1
 				i++;
 				if (i == E.GetLength()) throw // Expression incomplete
 
 				cur = E.GetToken(i);
-				s2.AddToken(cur&);
-				cur = Arab(cur->GetValue() == 0 ? "0" : "1");
-				s2.AddToken(cur&);
-				cur = Operator("-");
-				s2.AddToken(cur&);
-				cur = Arab("1");
-				s2.AddToken(cur&);
-				cur = Operator("+");
-				s2.AddToken(cur&);
+				s2.AddToken(cur);
+				cur = new Arab(cur->Display());
+				s2.AddToken(cur);
+				cur = new Operator("-");
+				s2.AddToken(cur);
+				cur = new Arab("1");
+				s2.AddToken(cur);
+				cur = new Operator("+");
+				s2.AddToken(cur);
 			} else {
+				if (op.GetJenisOperator() == kali || op.GetJenisOperator() == bagi)
+					s1.push(cur);
+				else {
+					Operator op2;
+					try {
+						while ( (op2 = Operator(s1.top()->Display())).GetType() == opr
+							&& (op2.GetJenisOperator() == kali || op2.GetJenisOperator() == bagi)
+						) {
+							s2.AddToken(&op2);
+							s1.pop();
+						}
+					} catch (StackExp& e) {}
 
+					s1.push(cur);
+				}
 			}
 		}
+	}
+	while (!s1.empty()) {
+		s2.AddToken(s1.top());
+		s1.pop();
 	}
 	E = s2;
-	/*
-	for(int i = 0; i < E.GetLength(); ++i) {
-		Token cur = E.GetToken(i);
-		if (cur->GetType() != opr || cur.GetJenisOperator() == kurungBuka) 
-			o = Operator("+");
-			continue;
-		else {
-			o = cur;
-		}
-		if (cur.GetType() == opr && cur.GetJenisOperator() == kurungBuka) {
-			int parenthesesBalance = 1;
-			Expression Ee;
-			while (i < (E.GetLength() - 1) && parenthesesBalance != 0) {
-				++i;
-				if (cur.GetType() == opr) {
-					parenthesesBalance +=
-						(cur.GetJenisOperator() == kurungBuka ? 1
-						: cur.GetJenisOperator() == kurungBuka ? -1
-						: 0);
-				}
-				if (parenthesesBalance) Ee.AddToken(&cur);
-			}
-			if (parenthesesBalance != 0) throw //Expression wrong
-			else {
-				bef = Calculate(Ee);
-			}
-		}
-		else if (cur.GetType() == opr && cur.GetJenisOperator() == kurungTutup)
-			throw //Expression wrong
-		else
-			bef = cur.GetValue();
-		ans = CalculateAtom(ans, bef, o);
-	}
-	*/
 }

@@ -1,6 +1,3 @@
-#include "Token.h"
-#include <iostream>
-#include <assert.h>
 #include "Perintah.h"
 
 std::string Perintah::KarakterPerintah[] = {"set",

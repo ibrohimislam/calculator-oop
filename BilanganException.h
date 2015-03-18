@@ -1,5 +1,6 @@
 #ifndef _BILANGANEXCEPTION_H_
 #define _BILANGANEXCEPTION_H_
+
 #include <string>
 
 class BilanganException

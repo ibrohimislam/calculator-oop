@@ -11,8 +11,8 @@ enum EnumBilangan{
 	romawi
 };
 enum EnumOperator{
-	plus,
-	minus,
+	Plus,
+	Minus,
 	bagi,
 	kali,
 	Div,

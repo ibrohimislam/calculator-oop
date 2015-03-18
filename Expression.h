@@ -2,6 +2,11 @@
 #define _EXPRESSION_H_
 
 #include "STL/vector.h"
+#include "Bilangan.h"
+#include "Arab.h"
+#include "Romawi.h"
+#include "Perintah.h"
+#include "Operator.h"
 #include "Token.h"
 
 using namespace std;

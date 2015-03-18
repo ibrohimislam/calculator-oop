@@ -2,6 +2,8 @@
 #define _PERINTAH_H_
 
 #include "Token.h"
+#include <iostream>
+#include <assert.h>
 #include <string>
 
 class Perintah : public Token{

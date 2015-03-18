@@ -2,6 +2,8 @@
 #define _OPERATOR_H_
 
 #include "Token.h"
+#include <iostream>
+#include <assert.h>
 #include <string>
 
 class Operator : public Token {

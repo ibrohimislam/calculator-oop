@@ -1,5 +1,14 @@
 #ifndef _PARSER_H_
 #define _PARSER_H_
+
+
+#include "Perintah.h"
+#include "Operator.h"
+#include "Bilangan.h"
+#include "Arab.h"
+#include "Romawi.h"
+#include "Expression.h"
+#include "BilanganException.h"
 #include "STL/vector.h"
 #include "Expression.h"
 #include "Token.h"

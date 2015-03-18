@@ -1,12 +1,4 @@
 #include "Parser.h"
-#include "Perintah.h"
-#include "Operator.h"
-#include "Bilangan.h"
-#include "Arab.h"
-#include "Romawi.h"
-#include "Token.h"
-#include "Expression.h"
-#include "BilanganException.h"
 
 using namespace std;
 

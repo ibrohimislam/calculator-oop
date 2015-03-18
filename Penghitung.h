@@ -1,10 +1,11 @@
 #ifndef _PENGHITUNG_H_
 #define _PENGHITUNG_H_
 
-#include "Bilangan.h"
+#include "Arab.h"
 #include "Enum.h"
 #include "Expression.h"
 #include "Operator.h"
+#include "STL/stack.h"
 
 class Penghitung {
 public:

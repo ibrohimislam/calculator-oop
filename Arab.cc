@@ -1,10 +1,4 @@
-#include "Token.h"
-#include "Bilangan.h"
 #include "Arab.h"
-#include "BilanganException.h"
-#include <stdio.h>
-#include <string>
-#include <sstream>
 
 std::string Arab:: Display(){
 	

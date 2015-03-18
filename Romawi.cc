@@ -1,14 +1,4 @@
-#include "Token.h"
-#include "Bilangan.h"
 #include "Romawi.h"
-#include "BilanganException.h"
-
-#include <iostream>
-#include <cstdlib>
-#include <cassert>
-#include <string>
-#include <cstring>
-
 
 std::string Romawi:: Display(){
   int val = Value;
