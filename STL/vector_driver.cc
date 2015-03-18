@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <cstdio>
+#include <time.h>
 
 using namespace std;
 
