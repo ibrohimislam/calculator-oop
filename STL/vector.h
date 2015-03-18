@@ -40,6 +40,7 @@ private:
     T* buffer;
 };
 
+
 template<class T>
 vector<T>::vector(): _capacity(0), _size(0), buffer(0), Log(0) {
     // bergeming
@@ -144,5 +145,4 @@ void vector<T>::clear() {
     buffer = 0;
     Log = 0;
 }
-
 #endif

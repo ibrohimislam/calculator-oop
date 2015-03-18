@@ -1,4 +1,4 @@
 all: 
 
-test: vector_driver.o
-	g++ vector_driver.o -o test
+test: vector_driver.cc vector.cc
+	g++ vector_driver.cc vector.cc -o test
