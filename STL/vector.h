@@ -30,7 +30,7 @@ public:
     void reserve(unsigned int capacity);
     void resize(unsigned int size);
 
-    T & operator[](unsigned int index);
+    T & operator[](unsigned int index) const;
     vector<T> & operator = (const vector<T> &);
     void clear();
 private:
@@ -124,7 +124,7 @@ void vector<T>::resize(unsigned int size) {
 }
 
 template<class T>
-T& vector<T>::operator[](unsigned int index) {
+T& vector<T>::operator[](unsigned int index) const{
     return buffer[index];
 }
 

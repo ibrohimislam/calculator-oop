@@ -6,6 +6,7 @@
 #include "Romawi.h"
 #include "Token.h"
 #include "Expression.h"
+#include "BilanganException.h"
 
 using namespace std;
 
@@ -13,8 +14,8 @@ void Parser::SetModeBilangan(EnumBilangan B){
 	ModeB = B;
 }
 
-Expression& Parser::Parse(const std::string& s){
-	string tempStr;
+Expression Parser::Parse(const std::string& s){
+	char tempCStr[256];
 	Expression tempExpression;
 	Token* CurToken = NULL;
 	
@@ -22,19 +23,27 @@ Expression& Parser::Parse(const std::string& s){
 	int i =0;
 
 	char tempChar = s[0];
-	while (i < PanjangS && tempChar != '\0' ){
+	while (i < PanjangS){
+
+		std::cout << "sebelum: " << i << " " << PanjangS << std::endl;
+
 		int j=0;
 		
-		while (tempChar == ' ')
+		while ((tempChar == ' ') && (i < PanjangS))
 			tempChar=s[++i];
 
-		while (tempChar != ' '){
-			tempStr[j++] = s[i];
+		while ((tempChar != ' ') && (i < PanjangS)){
+			tempCStr[j++] = s[i];
 			i=i+1;
 			tempChar=s[i];
 		}
+		tempCStr[j] = 0;
 
-		i=i+1;
+		std::cout << "sesudah: " << i << " " << PanjangS << std::endl;
+
+		std::string tempStr = tempCStr;
+
+		std::cout << "token: \"" << tempStr << "\"" << std::endl;
 
 		//Keluar loop bila menemukan spasi
 		int banyak_perintah = Perintah::BanyakPerintah;
@@ -42,16 +51,17 @@ Expression& Parser::Parse(const std::string& s){
 
 		bool ditemukan = false;
 		//Cari apakah tempString merupakan perintah. Bila iya maka construct Perintah
-		for (int i = 0; (i < banyak_perintah) && (!ditemukan); ++i){		
-			if (tempStr == Perintah::KarakterPerintah[i]){
+		for (int k = 0; (k < banyak_perintah) && (!ditemukan); ++k){		
+			if (tempStr == Perintah::KarakterPerintah[k]){
 				CurToken = new Perintah(tempStr);
 				ditemukan = true;
+				cout << "cekperintah";
 			}
 		}
 
 		//tempString bukan perintah. Bila operator construct Operator
-		for (int i = 0; (i < banyak_operator) && (!ditemukan); ++i){
-			if (tempStr == Operator::KarakterOperator[i]){
+		for (int k = 0; (k < banyak_operator) && (!ditemukan); ++k){
+			if (tempStr == Operator::KarakterOperator[k]){
 				CurToken = new Operator(tempStr);
 				ditemukan = true;
 			}		
@@ -75,6 +85,8 @@ Expression& Parser::Parse(const std::string& s){
 
 		if (CurToken!=NULL)
 			tempExpression.AddToken(CurToken);
+
+		std::cout << "akhir: " << i << " " << PanjangS << std::endl;
 	}
 	//Keluar loop bila i >= dari PanjangS atau menemukan char '\0'
 	return tempExpression;
