@@ -1,4 +1,32 @@
-#include "stack.h"
+#ifndef _STL_STACK_H
+#define _STL_STACK_H
+
+#include <cstdlib>
+
+template<class T>
+class stack 
+{
+	struct node {
+		T info;
+		node* next;
+	};
+	typedef node infotype;
+
+public:
+	stack();
+	stack(const stack&);
+	stack& operator= (const stack&);
+	~stack();
+	void pop();
+	void push(T);
+	T top();
+	int size();
+	bool empty();
+
+private:
+	int Size;
+	infotype* topElmt;
+};
 
 template<class T> stack<T>::stack() : Size(0), topElmt(NULL) {}
 
@@ -67,3 +95,5 @@ template<class T> T stack<T>::top() { return topElmt->info; }
 template<class T> int stack<T>::size() { return Size; }
 
 template<class T> bool stack<T>::empty() { return topElmt == NULL; }
+
+#endif

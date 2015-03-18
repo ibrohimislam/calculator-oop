@@ -2,15 +2,23 @@
 #define _PERINTAH_H_
 
 #include "Token.h"
-#include <string.h>
+#include <string>
 
 class Perintah : public Token{
 	public:
-		Perintah();
+		//ctor
+		Perintah(){}
+		Perintah(std::string _s);
+		//dtor
+		~Perintah(){}
+		//cctor dan operator= tidak dibutuhkan karena tidak akan dilakukan assignment antar operator
 		EnumPerintah GetJenisPerintah();
+		void Display();
+		EnumType GetType();
+		static std::string KarakterPerintah[];
+		static int BanyakPerintah;
 	private:
 		EnumPerintah JenisPerintah;
-		static std::string KarakterPerintah[];
 };
 
 #endif
