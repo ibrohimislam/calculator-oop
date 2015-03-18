@@ -67,6 +67,7 @@ double Penghitung::CalculatePostfix(Expression& E) {
 			Operator *op = (Operator *) cur;
 			s.push(CalculateAtom(b1, b2, op));
 		} else {
+			if (cur->GetType()!=bil) throw PenghitungException("Terdapat kesalahan pada sintaks.");
 			Bilangan *op = (Bilangan*) cur;
 			s.push(op->GetValue());
 		}
@@ -98,7 +99,6 @@ void Penghitung::ParseInfix(Expression& E) {
 			else if (op.GetJenisOperator() == Not) {		// Not x = x - 2x + 1
 				i++;
 				if (i == E.GetLength()) throw // Expression incomplete
-
 				cur = E.GetToken(i);
 				s2.AddToken(cur);
 				cur = new Arab(cur->Display());
