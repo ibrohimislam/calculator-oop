@@ -9,42 +9,44 @@
 
 
 void Romawi:: Display(){
-	int val = Value;
-	char* hasil = (char*) malloc(1000);
-	char* res = hasil;
-	size_t sz;
+  
+  std::cout << Value << std::endl;
 
-	char* MatrixRomawi[6][10] = {
-		{(char*)"", (char*)"c", (char*)"cc", (char*)"ccc", (char*)"cd", (char*)"d", (char*)"dc", (char*)"dcc", (char*)"dccc", (char*)"cm"},
-		{(char*)"", (char*)"x", (char*)"xx", (char*)"xxx", (char*)"xv", (char*)"v", (char*)"vx", (char*)"vxx", (char*)"vxxx", (char*)"xc"},
-		{(char*)"", (char*)"M", (char*)"MM", (char*)"MMM", (char*)"Mv", (char*)"v", (char*)"vM", (char*)"vMM", (char*)"vMMM", (char*)"Mx"},
-		{(char*)"", (char*)"C", (char*)"CC", (char*)"CCC", (char*)"CD", (char*)"D", (char*)"DC", (char*)"DCC", (char*)"DCCC", (char*)"CM"},
-		{(char*)"", (char*)"X", (char*)"XX", (char*)"XXX", (char*)"XL", (char*)"L", (char*)"LX", (char*)"LXX", (char*)"LXXX", (char*)"XC"},
-		{(char*)"", (char*)"I", (char*)"II", (char*)"III", (char*)"IV", (char*)"V", (char*)"VI", (char*)"VII", (char*)"VIII", (char*)"IX"}
-	};
+  int val = Value;
+  char* hasil = (char*) malloc(1000);
+  char* res = hasil;
+  size_t sz;
+
+  char* MatrixRomawi[6][10] = {
+    {(char*)"", (char*)"c", (char*)"cc", (char*)"ccc", (char*)"cd", (char*)"d", (char*)"dc", (char*)"dcc", (char*)"dccc", (char*)"cm"},
+    {(char*)"", (char*)"x", (char*)"xx", (char*)"xxx", (char*)"xv", (char*)"v", (char*)"vx", (char*)"vxx", (char*)"vxxx", (char*)"xc"},
+    {(char*)"", (char*)"M", (char*)"MM", (char*)"MMM", (char*)"Mv", (char*)"v", (char*)"vM", (char*)"vMM", (char*)"vMMM", (char*)"Mx"},
+    {(char*)"", (char*)"C", (char*)"CC", (char*)"CCC", (char*)"CD", (char*)"D", (char*)"DC", (char*)"DCC", (char*)"DCCC", (char*)"CM"},
+    {(char*)"", (char*)"X", (char*)"XX", (char*)"XXX", (char*)"XL", (char*)"L", (char*)"LX", (char*)"LXX", (char*)"LXXX", (char*)"XC"},
+    {(char*)"", (char*)"I", (char*)"II", (char*)"III", (char*)"IV", (char*)"V", (char*)"VI", (char*)"VII", (char*)"VIII", (char*)"IX"}
+  };
 
    int size[] = { 0, 1, 2, 3, 2,  1,  2,  3,  4, 2};
 
     // tambah M hingga dibawah 1000
 
     while (val >= 1000000) {
-	    if (sz-- < 1){
-        	break;
+      if (sz-- < 1){
+          break;
         }else{
-        	*res++ = 'm';
-        	val -= 1000;
-    	}
+          *res++ = 'm';
+          val -= 1000000;
+      }
     }
 
      // Add each of the correct elements, adjusting as we go.
-    int pembagi = 100;
-    for (int i = 0; i < 3; i++){
-    	assert(sz >= size[val/pembagi]);
-	    sz -= size[val/pembagi];
-	    strcpy(res, MatrixRomawi[i][val/pembagi]);
-	    res += size[val/pembagi];
-	    val = val % pembagi;
-	    pembagi /= 10;
+    int pembagi = 100000;
+    for (int i = 0; i < 6; i++){
+      sz -= size[val/pembagi];
+      strcpy(res, MatrixRomawi[i][val/pembagi]);
+      res += size[val/pembagi];
+      val = val % pembagi;
+      pembagi /= 10;
     }
 
     // Finish string off.
@@ -96,6 +98,6 @@ Romawi::Romawi(const std::string& s){
   Value = sum;
 }
 
-long double Romawi:: GetValue(){
+double Romawi:: GetValue(){
 	return Value;
 }

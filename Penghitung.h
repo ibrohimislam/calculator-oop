@@ -12,7 +12,7 @@ public:
 	~Penghitung();
 	// operator= tidak diperlukan karena tidak ada pointer
 
-	long double Calculate(Expression E);
+	double Calculate(Expression E);
 	void SetSintaks(EnumSintaks Mode);
 	void SetMathLogic(EnumMathLogic Mode);
 private:

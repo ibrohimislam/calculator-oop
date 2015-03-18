@@ -14,7 +14,7 @@ class Romawi: public Bilangan{
 		//dtor
 		~Romawi(){}
 		//cctor dan operator= tidak pernah dipakai karena tidak mungkin instansiasi
-		long double GetValue();
+		double GetValue();
 
 		void Display();
 	private:
