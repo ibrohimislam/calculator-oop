@@ -1,7 +1,7 @@
 #ifndef _MEM_H_
 #define _MEM_H_ 1
 
-#include "vector.h"
+#include "STL/vector.h"
 #include "Expression.h"
 
 using namespace std;
@@ -12,7 +12,7 @@ public:
 	Memori();
 	~Memori();
 	void AddExpression(const Expression& E);
-	Expression& GetExpression(int);
+	Expression& GetExpression(int i);
 	vector<Expression>& GetAllExpression();
 	int GetLength();
 	bool Undo(int n);

@@ -14,8 +14,12 @@ class Arab: public Bilangan{
 		~Arab(){}
 		//cctor dan operator= tidak pernah dipakai karena tidak mungkin instansiasi
 		double GetValue();
+<<<<<<< HEAD
 		void Display();
 
+=======
+		std::string Display();
+>>>>>>> origin/master
 	private:
 		double Value;
 };

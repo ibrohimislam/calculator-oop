@@ -10,7 +10,7 @@
 #include <cstring>
 
 
-void Romawi:: Display(){
+std::string Romawi:: Display(){
   int val = Value;
   char* hasil = (char*) malloc(1000);
   char* res = hasil;
@@ -53,7 +53,7 @@ void Romawi:: Display(){
     assert (sz >= 1);
     *res = '\0';
 
-    std::cout << hasil;
+    return hasil;
 }
 
 Romawi::Romawi(){

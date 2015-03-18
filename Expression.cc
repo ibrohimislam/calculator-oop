@@ -19,9 +19,22 @@ Expression& Expression::operator=(const Expression& E1){
 		VectorOfToken.push_back(E1.GetToken(i));
 	}
 
+	std::cout << "assign expr" << VectorOfToken.size() << std::endl;
+
 	return *this;
 }
 
+Expression::Expression(const Expression& E1){
+	
+	int PanjangExpresi= E1.GetLength();
+	for (int i = 0; i < PanjangExpresi; ++i)
+	{
+		VectorOfToken.push_back(E1.GetToken(i));
+	}
+
+	std::cout << "cctor expr" << VectorOfToken.size() << std::endl;
+
+}
 Token* Expression::GetToken(int i) const{
 	return VectorOfToken[i];
 }

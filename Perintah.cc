@@ -32,8 +32,8 @@ EnumType Perintah::GetType (){
 	return cmd;
 }
 
-void Perintah::Display(){
-	std::cout << Perintah::KarakterPerintah[JenisPerintah];
+std::string Perintah::Display(){
+	return Perintah::KarakterPerintah[JenisPerintah];
 }
 
 EnumPerintah Perintah:: GetJenisPerintah(){

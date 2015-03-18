@@ -24,8 +24,8 @@ EnumType Operator::GetType(){
 	return opr;
 }
 
-void Operator::Display(){
-	std::cout << Operator::KarakterOperator[JenisOperator];
+std::string Operator::Display(){
+	return Operator::KarakterOperator[JenisOperator];
 }
 
 EnumOperator Operator:: GetJenisOperator(){
