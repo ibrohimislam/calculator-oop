@@ -15,9 +15,10 @@ class Perintah : public Token{
 		EnumPerintah GetJenisPerintah();
 		void Display();
 		EnumType GetType();
+		static std::string KarakterPerintah[];
+		static int BanyakPerintah;
 	private:
 		EnumPerintah JenisPerintah;
-		static std::string KarakterPerintah[];
 };
 
 #endif

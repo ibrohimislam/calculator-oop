@@ -1,4 +1,10 @@
 #include "Parser.h"
+#include "Perintah.h"
+#include "Operator.h"
+#include "Bilangan.h"
+#include "Arab.h"
+#include "Romawi.h"
+#include "Token.h"
 
 using namespace std;
 
@@ -22,12 +28,13 @@ Expression Parser::Parse(const std::string& s){
 		}
 
 		//Keluar loop bila menemukan spasi
-		int banyak_perintah = sizeof(Perintah::KarakterPerintah)/sizeof(string);
-		int banyak_operator = sizeof(Operator::KarakterOperator)/sizeof(string);
+		int banyak_perintah = Perintah::BanyakPerintah;
+		int banyak_operator = Operator::BanyakOperator;
+
 		bool ditemukan = false;
 		//Cari apakah tempString merupakan perintah. Bila iya maka construct Perintah
 		for (int i = 0; (i < banyak_perintah) && (!ditemukan); ++i){		
-			if (tempStr == KarakterPerintah[i]){
+			if (tempStr == Perintah::KarakterPerintah[i]){
 				CurToken = new Perintah(tempStr);
 				ditemukan = true;
 			}
@@ -35,7 +42,7 @@ Expression Parser::Parse(const std::string& s){
 
 		//tempString bukan perintah. Bila operator construct Operator
 		for (int i = 0; (i < banyak_operator) && (!ditemukan); ++i){
-			if (_s == KarakterOperator[i]){
+			if (tempStr == Operator::KarakterOperator[i]){
 				CurToken = new Operator(tempStr);
 				ditemukan = true;
 			}		

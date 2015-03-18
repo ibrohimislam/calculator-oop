@@ -4,6 +4,7 @@
 #include <assert.h>
 
 std::string Operator::KarakterOperator[] = {"+", "-", "/", "*", "Div", "Mod", "&&", "||", "!", "^", "(", ")"};
+int Operator::BanyakOperator = 12;
 
 Operator::Operator(std::string _s) {
 	int banyak_operator = sizeof(KarakterOperator)/sizeof(std::string);

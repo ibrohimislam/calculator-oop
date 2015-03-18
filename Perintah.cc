@@ -10,6 +10,9 @@ std::string Perintah::KarakterPerintah[] = {"set",
 		"showall",
 		"save"};
 
+int Perintah::BanyakPerintah = 6;
+
+
 Perintah::Perintah(std::string _s) {
 	int banyak_perintah = sizeof(KarakterPerintah)/sizeof(std::string);
 	

@@ -15,9 +15,10 @@ class Operator : public Token{
 		EnumOperator GetJenisOperator();
 		void Display();
 		EnumType GetType();
+		static std::string KarakterOperator[];
+		static int BanyakOperator;
 	private:
 		EnumOperator JenisOperator;
-		static std::string KarakterOperator[];
 };
 
 #endif

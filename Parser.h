@@ -1,7 +1,8 @@
 #ifndef _PARSER_H_
 #define _PARSER_H_
 #include "STL/vector.h"
-//#include "expression.h"
+#include "Expression.h"
+#include "Token.h"
 #include "Enum.h"
 #include <string>
 
