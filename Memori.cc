@@ -27,13 +27,22 @@ void Memori::AddExpression(const Expression& E){
 		std::cout << "fail\n";
 		int numEx,numToken;
 		int len = this->GetLength();
-		for (numEx = head + 1; numEx < len;++numEx){
-			Expression ExKei = this->GetExpression(numEx);
+		int vLen = VectorOfExpression.size();
+		while (vLen > head){
+			Expression ExKei = this->GetExpression(vLen-1);
 			int lenExKei = ExKei.GetLength();
 			for (numToken = 0; numToken < lenExKei; ++numToken){
 				delete ExKei.GetToken(numToken);
 			}
+			VectorOfExpression.pop_back();
+			vLen--;
 		}
+		std::cout << "head = length\n";
+		++head;
+		length = head;
+		std::cout << "sapisapisapi\n";
+		VectorOfExpression.push_back(E);
+		std::cout << "memori add expr" << VectorOfExpression[head-1].GetLength() << std::endl;
 	}else{//head = length karena head tidak mungkin lebih besar dari length
 		std::cout << "head = length\n";
 		++head;
@@ -114,8 +123,7 @@ void Memori::Save(){
 
 void Memori::ShowMem(int n){
 	int numEx,numToken;
-	int len = GetLength();
-	for (numEx=len-n; numEx < len;++numEx){
+	for (numEx=head-n; numEx < head;++numEx){
 		Expression ExKei = this->GetExpression(numEx);
 		int lenExKei = ExKei.GetLength();
 		for (numToken = 0; numToken < lenExKei; ++numToken){
@@ -127,6 +135,5 @@ void Memori::ShowMem(int n){
 }
 
 void Memori::ShowAll(){
-	int len = GetLength();
-	this->ShowMem(len);
+	this->ShowMem(head);
 }

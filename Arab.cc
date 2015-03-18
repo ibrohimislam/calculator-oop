@@ -12,6 +12,11 @@ Arab:: Arab(){
 	Value = 0;
 }
 
+Arab::Arab(const double d) {
+	Value = d;
+}
+
+
 Arab:: Arab(const std::string& s) {
 	std::cout << "\"" << s << "\""<< std::endl;
 

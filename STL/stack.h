@@ -14,9 +14,11 @@ public:
 	void printMsg() { printf("Error : %s\n", msg[errCode]); }
 	
 private:
-	char msg[2][32] = {"stack empty", "allocation fail"};
+	static char msg[2][32];
 	int errCode;
 };
+
+char StackExp::msg[2][32] = {"stack empty", "allocation fail"};
 
 /* Kelas stack */
 template<class T>
