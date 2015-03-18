@@ -11,7 +11,6 @@ public:
 	Penghitung(const Penghitung&);
 	~Penghitung();
 	// operator= tidak diperlukan karena tidak ada pointer
-	// 
 
 	long double Calculate(Expression E);
 	void SetSintaks(EnumSintaks Mode);

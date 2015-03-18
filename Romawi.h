@@ -10,7 +10,7 @@ class Romawi: public Bilangan{
 	public:
 		//ctor
 		Romawi();
-		Romawi(const std::string s);
+		Romawi(const std::string& s);
 		//dtor
 		~Romawi(){}
 		//cctor dan operator= tidak pernah dipakai karena tidak mungkin instansiasi
