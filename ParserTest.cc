@@ -5,6 +5,7 @@
 #include "Perintah.h"
 #include "Operator.h"
 #include "Parser.h"
+#include "ParserException.h"
 #include "Expression.h"
 #include <string>
 #include <stdio.h>
@@ -20,18 +21,27 @@ int main(){
 	//tes string
 	cout << "Masukkan string : "; getline(std::cin, s1);
 	
-	E1 = P1.Parse(s1);
 
-	cout << "Parse Selesai" << std::endl;
-	int LengthExpr = E1.GetLength();
-
-	for (int i = 0; i < LengthExpr; ++i)
+	try
 	{
-		T1 = E1.GetToken(i);
-		std::cout << T1->Display();
-	}
+		E1 = P1.Parse(s1);
 
-	std::cout << std::endl;
+		cout << "Parse Selesai" << std::endl;
+
+		int LengthExpr = E1.GetLength();
+
+		for (int i = 0; i < LengthExpr; ++i)
+		{
+			T1 = E1.GetToken(i);
+			std::cout << T1->Display();
+		}
+
+		std::cout << std::endl;
+	}
+	catch (ParserException& E)
+	{
+		E.DisplayMsg();
+	}
 
 	return 0;
 }

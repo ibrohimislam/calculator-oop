@@ -1,4 +1,5 @@
 #include "Parser.h"
+#include "ParserException.h"
 
 using namespace std;
 
@@ -47,7 +48,16 @@ Expression Parser::Parse(const std::string& s){
 			if (tempStr == Perintah::KarakterPerintah[k]){
 				CurToken = new Perintah(tempStr);
 				ditemukan = true;
-				cout << "cekperintah";
+			}
+		}
+
+		std::string SpecialEnum[] = {"math", "logic", "arab", "romawi", "prefix", "infix", "postfix"};
+		int banyak_special_enum = sizeof(SpecialEnum)/sizeof(std::string);
+
+		for (int k = 0; (k < banyak_special_enum) && (!ditemukan); ++k){		
+			if (tempStr == SpecialEnum[k]){
+				CurToken = new Arab(k);
+				ditemukan = true;
 			}
 		}
 
@@ -73,6 +83,8 @@ Expression Parser::Parse(const std::string& s){
 		catch (BilanganException& E)
 		{
 			E.DisplayMsg();
+			// chained exception
+			throw ParserException("Terdapat kesalahan pada ekspresi.");
 		}
 
 		if (CurToken!=NULL)

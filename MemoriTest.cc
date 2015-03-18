@@ -63,6 +63,20 @@ int main(){
 	M1.ShowMem(1);
 	//tes save
 	M1.Save();
+	//undo untuk tes delete
+	if (M1.Undo(1)){
+		cout << "Undo berhasil\n";
+	} else {
+		cout << "Undo gagal\n";
+	}
+	cout << "Masukkan string terakhir untuk menimpa : "; getline(std::cin, s1);
+	
+	E2 = P1.Parse(s1);
+	//tes add memori
+	M1.AddExpression(E2);
+	M1.ShowAll();
+	M1.Save();
+
 	std::cout << std::endl;
 
 	return 0;

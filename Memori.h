@@ -11,6 +11,7 @@ class Memori
 public:
 	Memori();
 	~Memori();
+	// memori bertanggung jawab atas penghapusan token
 	void AddExpression(const Expression& E);
 	Expression& GetExpression(int i);
 	vector<Expression>& GetAllExpression();

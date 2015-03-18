@@ -15,6 +15,7 @@ class Arab: public Bilangan{
 	public:
 		//ctor
 		Arab();
+		Arab(const double d);
 		Arab(const std::string& s);
 		//dtor
 		~Arab(){}
