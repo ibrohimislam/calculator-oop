@@ -1,14 +1,7 @@
-#include "Token.h"
-#include "Perintah.h"
-#include "Operator.h"
-#include "Bilangan.h"
-#include "Romawi.h"
-#include "Arab.h"
-
-#include <stdio.h>
-#include <stdlib.h>
-
+#include "Calculator.h"
 int main()
 {
+	Calculator C;
+	C.Run();
 	return 0;
 }
