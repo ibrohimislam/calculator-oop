@@ -6,7 +6,7 @@ void Parser::SetModeBilangan(EnumBilangan B){
 	ModeB = B;
 }
 
-Expression Parser::Parse(string s){
+Expression Parser::Parse(const std::string& s){
 	string tempStr;
 	Token* CurToken;
 	
