@@ -1,9 +1,10 @@
 #ifndef _PENGHITUNG_H_
 #define _PENGHITUNG_H_
 
+#include "Bilangan.h"
 #include "Enum.h"
 #include "Expression.h"
-
+#include "Operator.h"
 
 class Penghitung {
 public:
@@ -15,9 +16,13 @@ public:
 	double Calculate(Expression E);
 	void SetSintaks(EnumSintaks Mode);
 	void SetMathLogic(EnumMathLogic Mode);
+	double CalculatePostfix(Expression& E);
+	void ParseInfix(Expression& E);
+	double CalculateAtom(double a, double b, Operator o);
+
 private:
 	EnumSintaks ModeSintaks;
-	ModeMathLogic ModeMathLogic;
+	EnumMathLogic ModeMathLogic;
 };
 
 #endif

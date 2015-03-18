@@ -4,7 +4,7 @@
 #include "Token.h"
 #include <string>
 
-class Operator : public Token{
+class Operator : public Token {
 	public:
 		//ctor
 		Operator() {}

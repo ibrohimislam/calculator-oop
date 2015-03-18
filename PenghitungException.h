@@ -1,6 +1,8 @@
 #ifndef _PENGHITUNGEXCEPTION_H_
 #define _PENGHITUNGEXCEPTION_H_
+
 #include <string>
+#include <iostream>
 
 class PenghitungException
 {
