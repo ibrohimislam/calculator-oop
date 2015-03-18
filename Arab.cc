@@ -1,19 +1,17 @@
 #include "Token.h"
 #include "Bilangan.h"
 #include "Arab.h"
+#include <iostream>
 
-EnumType Arab:: GetType(){
-	return Bilangan;
-}
 void Arab:: Display(){
-	cout << Value;
+	std::cout << Value;
 }
 
 Arab:: Arab(){
 	Value = 0;
 }
 
-Arab:: Arab(string s) {
+Arab:: Arab(const std::string& s) {
 	long double tval = 0.0;
 	int len = s.length();
 	int temp = 1;

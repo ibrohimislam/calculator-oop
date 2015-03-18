@@ -7,9 +7,15 @@
 
 class Arab: public Bilangan{
 	public:
+		//ctor
 		Arab();
-		Arab(std::string);
+		Arab(const std::string& s);
+		//dtor
+		~Arab(){}
+		//cctor dan operator= tidak pernah dipakai karena tidak mungkin instansiasi
 		long double GetValue();
+
+		void Display();
 	private:
 		long double Value;
 };

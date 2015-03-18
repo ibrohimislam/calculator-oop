@@ -1,8 +1,9 @@
 #include "Token.h"
-
+#include <iostream>
+#include <assert.h>
 #include "Perintah.h"
 
-static std::string Perintah::KarakterPerintah = {"set",
+std::string Perintah::KarakterPerintah[] = {"set",
 		"undo",
 		"redo",
 		"showmem",
@@ -10,13 +11,13 @@ static std::string Perintah::KarakterPerintah = {"set",
 		"save"};
 
 Perintah::Perintah(std::string _s) {
-	int banyak_perintah = sizeof(KarakterPerintah)/sizeof(string);
+	int banyak_perintah = sizeof(KarakterPerintah)/sizeof(std::string);
 	
 	bool ditemukan = false;
 
 	for (int i = 0; (i < banyak_perintah) && (!ditemukan); ++i)
 		if (_s == KarakterPerintah[i]){
-			JenisOperator = i;
+			JenisPerintah = (EnumPerintah)i;
 			ditemukan = true;
 		}
 
@@ -25,11 +26,11 @@ Perintah::Perintah(std::string _s) {
 
 
 EnumType Perintah::GetType (){
-	return Perintah;
+	return cmd;
 }
 
 void Perintah::Display(){
-	cout << Perintah::KarakterPerintah[JenisPerintah];
+	std::cout << Perintah::KarakterPerintah[JenisPerintah];
 }
 
 EnumPerintah Perintah:: GetJenisPerintah(){

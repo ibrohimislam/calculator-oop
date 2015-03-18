@@ -1,10 +1,12 @@
 #include "Token.h"
 #include "Bilangan.h"
 #include "Romawi.h"
+#include <iostream>
+#include <cstdlib>
+#include <cassert>
+#include <string>
+#include <cstring>
 
-EnumType Romawi:: GetType(){
-	return Bilangan;
-}
 
 void Romawi:: Display(){
 	int val = Value;
@@ -12,13 +14,13 @@ void Romawi:: Display(){
 	char* res = hasil;
 	size_t sz;
 
-	char* MatrixRomawi[3][10] = {
-		{"", "c", "cc", "ccc", "cd", "d", "dc", "dcc", "dccc", "cm"},
-		{"", "x", "xx", "xxx", "xv", "v", "vx", "vxx", "vxxx", "xc"},
-		{"", "M", "MM", "MMM", "Mv", "v", "vM", "vMM", "vMMM", "Mx"},
-		{"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"},
-		{"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"},
-		{"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"}
+	char* MatrixRomawi[6][10] = {
+		{(char*)"", (char*)"c", (char*)"cc", (char*)"ccc", (char*)"cd", (char*)"d", (char*)"dc", (char*)"dcc", (char*)"dccc", (char*)"cm"},
+		{(char*)"", (char*)"x", (char*)"xx", (char*)"xxx", (char*)"xv", (char*)"v", (char*)"vx", (char*)"vxx", (char*)"vxxx", (char*)"xc"},
+		{(char*)"", (char*)"M", (char*)"MM", (char*)"MMM", (char*)"Mv", (char*)"v", (char*)"vM", (char*)"vMM", (char*)"vMMM", (char*)"Mx"},
+		{(char*)"", (char*)"C", (char*)"CC", (char*)"CCC", (char*)"CD", (char*)"D", (char*)"DC", (char*)"DCC", (char*)"DCCC", (char*)"CM"},
+		{(char*)"", (char*)"X", (char*)"XX", (char*)"XXX", (char*)"XL", (char*)"L", (char*)"LX", (char*)"LXX", (char*)"LXXX", (char*)"XC"},
+		{(char*)"", (char*)"I", (char*)"II", (char*)"III", (char*)"IV", (char*)"V", (char*)"VI", (char*)"VII", (char*)"VIII", (char*)"IX"}
 	};
 
    int size[] = { 0, 1, 2, 3, 2,  1,  2,  3,  4, 2};
@@ -37,9 +39,9 @@ void Romawi:: Display(){
      // Add each of the correct elements, adjusting as we go.
     int pembagi = 100;
     for (int i = 0; i < 3; i++){
-    	if (sz < size[val/pembagi]) return 0;
+    	assert(sz >= size[val/pembagi]);
 	    sz -= size[val/pembagi];
-	    strcpy (res, MatrixRomawi[i][val/pembagi]);
+	    strcpy(res, MatrixRomawi[i][val/pembagi]);
 	    res += size[val/pembagi];
 	    val = val % pembagi;
 	    pembagi /= 10;
@@ -47,22 +49,18 @@ void Romawi:: Display(){
 
     // Finish string off.
 
-    if (sz < 1) return 0;
+    assert (sz >= 1);
     *res = '\0';
 
-    cout << hasil;
+    std::cout << hasil;
 }
 
-void Romawi:: Display(EnumBilangan T){
-	cout << Value;
+Romawi::Romawi(){
+  Value = 1;
 }
 
-Romawi:: Romawi(){
-	Value = 1;
-}
-
-Romawi:: Romawi(const string& s){
-int rom_to_int[255];
+Romawi::Romawi(const std::string& s){
+  int rom_to_int[255];
   memset(rom_to_int, 0, sizeof(rom_to_int));
 
   rom_to_int['I'] = 1;
