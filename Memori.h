@@ -11,17 +11,19 @@ class Memori
 public:
 	Memori();
 	~Memori();
-	Expression GetExpression(int);
-	Expression GetAllExpression();
+	void AddExpression(const Expression& E);
+	Expression& GetExpression(int);
+	vector<Expression>& GetAllExpression();
 	int GetLength();
-	void Undo();
-	void Redo();
+	bool Undo(int n);
+	Expression& Redo();
 	void Save();
-	void ShowMem();
+	void ShowMem(int n);
 	void ShowAll();
-	
 private:
 	vector<Expression> VectorOfExpression;
+	int head;
+	int length;
 };
 
 #endif
