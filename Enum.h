@@ -14,12 +14,14 @@
 		minus,
 		bagi,
 		kali,
-		div,
-		mod,
-		and,
-		or,
-		not,
-		xor
+		Div,
+		Mod,
+		And,
+		Or,
+		Not,
+		Xor,
+		kurungBuka,
+		kurungTutup
 	}
 	enum EnumPerintah {
 		set,

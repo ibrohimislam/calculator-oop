@@ -6,7 +6,11 @@
 
 class Perintah : public Token{
 	public:
-		Perintah();
+		//ctor
+		Perintah(){}
+		//dtor
+		~Perintah(){}
+		//cctor dan operator= tidak dibutuhkan karena tidak akan dilakukan assignment antar operator
 		EnumPerintah GetJenisPerintah();
 	private:
 		EnumPerintah JenisPerintah;

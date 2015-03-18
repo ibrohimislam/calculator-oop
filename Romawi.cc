@@ -98,6 +98,6 @@ int rom_to_int[255];
   Value = sum;
 }
 
-int Romawi:: GetValue(){
+long double Romawi:: GetValue(){
 	return Value;
 }
