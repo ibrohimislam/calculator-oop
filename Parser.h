@@ -16,7 +16,7 @@ class Parser{
 		~Parser(){}
 		//operator= dan dan cctor tidak diperlukan karena tidak akan ada inisialisasi objek parser ke parser lain
 		void SetModeBilangan(EnumBilangan B);
-		Expression Parse(const std::string& s);
+		Expression& Parse(const std::string& s);
 	private:
 		EnumBilangan ModeB;
 };
