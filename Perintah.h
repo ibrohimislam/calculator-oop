@@ -13,7 +13,7 @@ class Perintah : public Token{
 		~Perintah(){}
 		//cctor dan operator= tidak dibutuhkan karena tidak akan dilakukan assignment antar operator
 		EnumPerintah GetJenisPerintah();
-		void Display();
+		std::string Display();
 		EnumType GetType();
 		static std::string KarakterPerintah[];
 		static int BanyakPerintah;

@@ -13,7 +13,7 @@ class Operator : public Token{
 		~Operator(){}
 		//cctor dan operator= tidak dibutuhkan karena tidak akan dilakukan assignment antar operator
 		EnumOperator GetJenisOperator();
-		void Display();
+		std::string Display();
 		EnumType GetType();
 		static std::string KarakterOperator[];
 		static int BanyakOperator;

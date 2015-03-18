@@ -15,7 +15,7 @@ class Romawi: public Bilangan{
 		~Romawi(){}
 		//cctor dan operator= tidak pernah dipakai karena tidak mungkin instansiasi
 		double GetValue();
-		void Display();
+		std::string Display();
 	private:
 		int Value;
 };

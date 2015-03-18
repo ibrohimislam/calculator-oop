@@ -17,7 +17,7 @@ int main(){
 	Parser P1;
 	Expression E1;
 	Token* T1;
-	//tes angka romawi
+	//tes string
 	cout << "Masukkan string : "; getline(std::cin, s1);
 	
 	E1 = P1.Parse(s1);
@@ -28,7 +28,7 @@ int main(){
 	for (int i = 0; i < LengthExpr; ++i)
 	{
 		T1 = E1.GetToken(i);
-		T1->Display();
+		std::cout << T1->Display();
 	}
 
 	std::cout << std::endl;

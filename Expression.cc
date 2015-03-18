@@ -21,7 +21,15 @@ Expression& Expression::operator=(const Expression& E1){
 
 	return *this;
 }
+Expression::Expression(const Expression& E1){
+	int PanjangExpresi= E1.GetLength();
+	
+	for (int i = 0; i < PanjangExpresi; ++i)
+	{
+		VectorOfToken.push_back(E1.GetToken(i));
+	}
 
+}
 Token* Expression::GetToken(int i) const{
 	return VectorOfToken[i];
 }

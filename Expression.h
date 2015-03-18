@@ -11,6 +11,7 @@ class Expression
 public:
 	//ctor
 	Expression(){}
+	Expression(const Expression& E1);
 	//dtor tidak bertangung jawab kepada token yang diberikan
 	~Expression();
 	//tidak diperlukan nilai cctor karena tidak ada assign ekspresi

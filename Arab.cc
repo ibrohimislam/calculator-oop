@@ -3,9 +3,15 @@
 #include "Arab.h"
 #include "BilanganException.h"
 #include <stdio.h>
+#include <string>
+#include <sstream>
 
-void Arab:: Display(){
-	printf("%lf", Value);
+std::string Arab:: Display(){
+	
+	std::stringstream ss;
+	ss << Value;
+	std::string SArab = ss.str();
+	return SArab;
 }
 
 Arab:: Arab(){
