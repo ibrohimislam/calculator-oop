@@ -4,6 +4,19 @@
 #include <string>
 #include <iostream>
 
+/**
+ * Class PenghitungException
+ * 
+ * @class     PenghitungException PenghitungException.h "PenghitungException.h"
+ * @package   Menghitung
+ * @brief     Kelas yang digunakan untuk melakukan proses exception penghitung
+ * @author    Afrizal Fikri
+ * @version   0.1
+ * @date      Maret 2015
+ * @warning   -
+ * 
+ */
+
 class PenghitungException
 {
 public:

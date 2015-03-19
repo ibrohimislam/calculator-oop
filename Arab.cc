@@ -1,7 +1,6 @@
 #include "Arab.h"
 
-std::string Arab:: Display(){
-	
+std::string Arab:: Display(){	
 	std::stringstream ss;
 	ss << Value;
 	std::string SArab = ss.str();

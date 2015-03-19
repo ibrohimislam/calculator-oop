@@ -11,12 +11,24 @@
 #include <string>
 #include <cstring>
 
+/**
+ * Class Romawi
+ * 
+ * @class     Romawi Romawi.h "Romawi.h"
+ * @package   Parser
+ * @brief     Kelas yang digunakan untuk merepresentasikan bilangan romawi
+ * @author    Satria Priambada
+ * @version   0.1
+ * @date      Maret 2015
+ * @warning   -
+ * 
+ */
 class Romawi: public Bilangan{
 	public:
 		//ctor
-		Romawi();
-		Romawi(const double d);
-		Romawi(const std::string& s);
+		Romawi();/*default constructor*/
+		Romawi(const double d);/* constructor with parameter double */
+		Romawi(const std::string& s);/* constructor with parameter string */
 		//dtor
 		~Romawi(){}
 		//cctor dan operator= tidak pernah dipakai karena tidak mungkin instansiasi

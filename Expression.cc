@@ -37,12 +37,3 @@ int Expression::GetLength() const {
 void Expression::AddToken(Token* T){
 	VectorOfToken.push_back(T);
 }
-
-void Expression::InvertExpression() {
-	for (int i = 0; i <= VectorOfToken.size() / 2; ++i) {
-		int j = VectorOfToken.size() - i - 1;
-		Token* tmp = VectorOfToken[i];
-		VectorOfToken[i] = VectorOfToken[j];
-		VectorOfToken[j] = tmp;
-	}
-}

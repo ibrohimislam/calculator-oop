@@ -7,19 +7,35 @@
 #include "Operator.h"
 #include "STL/stack.h"
 
+/**
+ * Class Penghitung
+ * 
+ * @class     Penghitung Penghitung.h "Penghitung.h"
+ * @package   Menghitung
+ * @brief     Kelas yang digunakan untuk melakukan proses menghitung token
+ * @author    Afrizal Fikri
+ * @version   0.1
+ * @date      Maret 2015
+ * @warning   -
+ * 
+ */
+
 class Penghitung {
 public:
-	Penghitung();
-	Penghitung(const Penghitung&);
+	//ctor
+	Penghitung();/*default constructor*/
+	Penghitung(const Penghitung&);/*cctor*/
+	//dtor
 	~Penghitung();
 	// operator= tidak diperlukan karena tidak ada pointer
 
-	double Calculate(Expression E);
-	void SetSintaks(EnumSintaks Mode);
-	void SetMathLogic(EnumMathLogic Mode);
-	double CalculatePostfix(Expression& E);
-	void ParseInfix(Expression& E);
-	double CalculateAtom(double a, double b, Operator* o);
+	double Calculate(Expression);
+	void SetSintaks(EnumSintaks);
+	void SetMathLogic(EnumMathLogic);
+	double CalculatePostfix(Expression&);
+	void ParseInfix(Expression&);
+	void ParsePrefix(Expression&);
+	double CalculateAtom(double, double, Operator*);
 
 private:
 	EnumSintaks ModeSintaks;

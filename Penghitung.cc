@@ -22,7 +22,7 @@ double Penghitung::Calculate(Expression E) {
 	} else {
 		switch (ModeSintaks) {
 			case infix : ParseInfix(E); break;
-			case prefix : E.InvertExpression(); break;
+			case prefix : ParsePrefix(E); break;
 			case postfix : break;
 		}
 	}
@@ -86,6 +86,36 @@ double Penghitung::CalculatePostfix(Expression& E) {
 		}
 	}
 	return s.top();
+}
+
+/**
+ *algo :
+ *1.If the prefix string is a single variable, it is its own postfix equivalent
+ *2.Let op be the first operator of the prefix string
+ *3.Find the first operand, opnd1 of the string.Convert it to postfix and call it post1.
+ *4.Find the second operand, opnd2, of the string.Convert it to postfix and cal it post2.
+ *5.Concatenate post1, post2, and op.
+ */
+void Penghitung::ParsePrefix(Expression& E)
+{
+	int i, j;
+	EnumType last = opr;
+	stack<Token*> ops;
+	Expression res;
+
+	for (i = 0; i < E.GetLength(); i++) ops.push(E.GetToken(i));
+
+	while (!ops.empty()) {
+		Token* cur = E.GetToken(i);
+		if (cur->GetType() == bil && last == bil)
+		{
+			Token* bef = res.GetToken(res.GetLength() - 1);
+			res.AddToken(bef);
+		}
+		last = cur->GetType();
+		res.AddToken(cur);
+	}
+	E = res;
 }
 
 void Penghitung::ParseInfix(Expression& E) {

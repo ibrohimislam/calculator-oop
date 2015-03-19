@@ -5,12 +5,23 @@
 #include <iostream>
 #include <assert.h>
 #include <string>
-
+/**
+ * Class Operator
+ * 
+ * @class     Operator Operator.h "Operator.h"
+ * @package   Parser
+ * @brief     Kelas yang digunakan untuk merepresentasikan token operator
+ * @author    Satria Priambada
+ * @version   0.1
+ * @date      Maret 2015
+ * @warning   -
+ * 
+ */
 class Operator : public Token {
 	public:
 		//ctor
-		Operator() {}
-		Operator(std::string _s);
+		Operator() {}/*default constructor*/
+		Operator(std::string _s);/*consturctor with parameter string*/
 		//dtor
 		~Operator(){}
 		//cctor dan operator= tidak dibutuhkan karena tidak akan dilakukan assignment antar operator

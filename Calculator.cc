@@ -1,6 +1,7 @@
 #include "Calculator.h"
 #include "CalculatorException.h"
 #include "PenghitungException.h"
+#include "ParserException.h"
 #include <string>
 //ctor
 Calculator::Calculator(){
@@ -48,37 +49,42 @@ void Calculator::Run(){
 	getline(cin, s);
 
 	while (s!="exit") {	
+		Expression e;
 
-		Expression e = ParserCalculator.Parse(s);
-		Token* firstToken = e.GetToken(0);
+		try {
+			e = ParserCalculator.Parse(s);
+			Token* firstToken = e.GetToken(0);
 		
-		if (firstToken->GetType() == cmd) {
-			try {
-				JalankanPerintah(e);
+			if (firstToken->GetType() == cmd) {
+				try {
+					JalankanPerintah(e);
+				}
+				catch (CalculatorException& e) {
+					e.DisplayMsg();
+				}
 			}
-			catch (CalculatorException& e) {
-				e.DisplayMsg();
-			}
-		}
-		else {
-			try {				
-				double hasil = PenghitungCalculator.Calculate(e);
-				Bilangan* hasilB;
-				if (mode_bilangan == romawi)
-					hasilB = new Romawi(hasil);
-				else if (mode_bilangan == arab)
-					hasilB = new Arab(hasil);
-				cout << hasilB->Display() << endl;
-				delete hasilB;
+			else {
+				try {				
+					double hasil = PenghitungCalculator.Calculate(e);
+					Bilangan* hasilB;
+					if (mode_bilangan == romawi)
+						hasilB = new Romawi(hasil);
+					else if (mode_bilangan == arab)
+						hasilB = new Arab(hasil);
+					cout << hasilB->Display() << endl;
+					delete hasilB;
 
-				MemCalculator->AddExpression(e);
-			} catch (PenghitungException& e) {
-				e.DisplayMsg();
-			} catch (StackExp& e) {
-				e.printMsg();
+					MemCalculator->AddExpression(e);
+				} catch (PenghitungException& e) {
+					e.DisplayMsg();
+				} catch (StackExp& e) {
+					e.printMsg();
+				}
 			}
-		}
-
+		} catch (ParserException& e) {
+			e.DisplayMsg();
+		};
+		
 		getline(cin, s);
 	}
 
