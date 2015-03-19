@@ -1,11 +1,13 @@
 #include "Perintah.h"
 
-std::string Perintah::KarakterPerintah[] = {"set",
-		"undo",
-		"redo",
-		"showmem",
-		"showall",
-		"save"};
+std::string Perintah::KarakterPerintah[] = {
+	"set",
+	"undo",
+	"redo",
+	"showmem",
+	"showall",
+	"save"
+};
 
 int Perintah::BanyakPerintah = 6;
 

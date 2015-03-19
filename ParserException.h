@@ -21,20 +21,53 @@
 class ParserException
 {
 public:
-	//ctor
+	/**
+	 * Konstruktor default
+	 * 
+	 * Konstruktor tanpa parameter yang menginisiasi
+	 * nilai pesan kesalahan dengan string kosong
+	 * 
+	 * @param none
+	 */
+	 
 	ParserException(){
 		MsgParserExp = "";
-	} /*default construtcor*/
+	} /*default constructor*/
+	
+	/**
+	 * Konstruktor dengan parameter string
+	 * 
+	 * Konstruktor dengan parameter string yang menginisiasi
+	 * nilai pesan kesalahan dengan string masukan
+	 * 
+	 * @param string
+	 */
+	 
 	ParserException(const std::string& s){
 		MsgParserExp = s;
-	}/*constructor with parameter string*/
-	//dtor
+	} /*constructor with parameter string*/
+	
+	/**
+	 * Destruktor 
+	 */
+	 
 	~ParserException(){}
 
-	//tidak memerlukan opr= dan cctor karena tidak pernah dilakukan instansiasi nilai
+	/* tidak memerlukan opr= dan cctor karena tidak pernah dilakukan instansiasi nilai */
+	
+	/**
+	 * Prosedur DisplayMsg
+	 * 
+	 * Mencetak pesan kesalahan dari exception yang dilempar
+	 * 
+	 * @param none
+	 * @return none
+	 */
+	 
 	void DisplayMsg(){
 		std::cout << MsgParserExp<<std::endl;
 	}
+	
 private:
 	std::string MsgParserExp; 
 };

@@ -21,20 +21,81 @@
  */
 
 class Perintah : public Token{
-	public:
-		//ctor
-		Perintah(){}/*default constructor*/
-		Perintah(std::string _s);/*constructor with parameter string*/
-		//dtor
-		~Perintah(){}
-		//cctor dan operator= tidak dibutuhkan karena tidak akan dilakukan assignment antar operator
-		EnumPerintah GetJenisPerintah();
-		std::string Display();
-		EnumType GetType();
-		static std::string KarakterPerintah[];
-		static int BanyakPerintah;
-	private:
-		EnumPerintah JenisPerintah;
+public:
+	/**
+	 * Konstruktor default
+	 * 
+	 * Konstuktor tanpa parameter
+	 */
+	 
+	Perintah(){} /*default constructor*/
+	
+	/** 
+	 * Konstruktor dengan parameter string
+	 * 
+	 * Konstruktor yang mengubah string masukan menjadi
+	 * perintah yang sesuai
+	 * 
+	 * @param string
+	 */
+	 
+	Perintah(std::string _s); /*constructor with parameter string*/
+	
+	/**
+	 * Destruktor
+	 * 
+	 */
+	
+	~Perintah(){}
+	
+	/* cctor dan operator= tidak dibutuhkan karena tidak akan dilakukan assignment antar operator */
+	
+	/**
+	 * Fungsi GetJenisPerintah 
+	 * 
+	 * Mendapatkan tipe perintah dari kelas Perintah yang sudah ada
+	 * 
+	 * @param none
+	 * @return EnumPerintah
+	 */
+
+	EnumPerintah GetJenisPerintah();
+	
+	/**
+	 * Fungsi Display
+	 * 
+	 * Fungsi bantunan untuk mencetak Perintah
+	 * Berfungsi menmbuat string dari Perintah
+	 * 
+	 * @param none
+	 * @return string
+	 */
+	 
+	std::string Display();
+	
+	/** Fungsi GetType
+	 * 
+	 * Fungsi yang mendapatkan tipe Token, yaitu Perintah
+	 * 
+	 * @param none
+	 * @return EnumType 
+	 */
+	 
+	EnumType GetType();
+	
+	/** 
+	 * KarakterPerintah
+	 * 
+	 * Daftar perintah yang tersedia
+	 * 
+	 * @enum string
+	 */
+	 
+	static std::string KarakterPerintah[];
+	static int BanyakPerintah;
+	
+private:
+	EnumPerintah JenisPerintah;
 };
 
 #endif

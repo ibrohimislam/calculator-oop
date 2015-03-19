@@ -21,8 +21,28 @@
 
 class Token{
 	public:
-		virtual EnumType GetType () = 0;//virtual function untuk mendapatkan tipe token
-		virtual std::string Display () = 0;//virtual function untuk menampilkan di layar
+		/**
+		 * Fungsi GetType
+		 * 
+		 * Fungsi untuk mendapat tipe token
+		 * 
+		 * @param none
+		 * @return EnumType
+		 */
+		 
+		virtual EnumType GetType () = 0;
+		
+		/**
+		 * Fungsi Display
+		 * 
+		 * Fungsi bantunan untuk mencetak Token
+		 * Berfungsi menmbuat string dari Token
+		 * 
+		 * @param none
+		 * @return string
+		 */
+		 
+		virtual std::string Display () = 0;
 };
 
 #endif

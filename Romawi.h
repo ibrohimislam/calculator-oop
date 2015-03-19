@@ -27,15 +27,69 @@
  */
 class Romawi: public Bilangan{
 	public:
-		//ctor
-		Romawi();/*default constructor*/
-		Romawi(const double d);/* constructor with parameter double */
-		Romawi(const std::string& s);/* constructor with parameter string */
-		//dtor
+		/**
+		 * Konstruktor default
+		 * 
+		 * Konstruktor tanpa parameter
+		 */
+		 
+		Romawi();
+		
+		/** 
+		 * Konstruktor dengan parameter nilai
+		 * 
+		 * Konstruktor dengan masukan nilai yang akan dibuat Bilangan Romawinya
+		 * 
+		 * @param const double
+		 * @pre d terdefinisi
+		 */
+		 
+		Romawi(const double d);	
+		
+		/**
+		 * Konstruktor dengan parameter string
+		 * 
+		 * Konstruktor dengan masukan string dari Romawi terkait
+		 * 
+		 * @param string&
+		 */
+		 
+		Romawi(const std::string& s);	
+		
+		/**
+		 * Destruktor
+		 * 
+		 * @param none
+		 */
+		 
 		~Romawi(){}
-		//cctor dan operator= tidak pernah dipakai karena tidak mungkin instansiasi
+		
+		/* cctor dan operator= tidak pernah dipakai karena tidak mungkin instansiasi */
+		
+		/**
+		 * Fungsi GetValue
+		 * 
+		 * Fungsi untuk mendapat nilai dari Romawi
+		 * 
+		 * @param none
+		 * @return double
+		 */
+		 
 		double GetValue();
+		
+		/**
+		 * Fungsi Display
+		 * 
+		 * Fungsi bantunan untuk mencetak Romawi
+		 * Berfungsi menmbuat string dari Romawi
+		 * 
+		 * @param none
+		 * @return string
+		 */
+		 
 		std::string Display();
+		
+		
 	private:
 		int Value;
 };
