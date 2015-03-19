@@ -15,8 +15,8 @@
 /**
  * Class Arab
  * 
- * @class     Arab arab.h "arab.h"
- * @package   Token
+ * @class     Arab Arab.h "Arab.h"
+ * @package   Parser
  * @brief     Kelas yang digunakan untuk merepresentasikan bilangan arab
  * @author    Satria Priambada
  * @version   0.1

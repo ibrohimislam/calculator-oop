@@ -5,18 +5,18 @@
 #include "Expression.h"
 
 using namespace std;
+
 /**
- * Class Memori
- * 
- * @class     Memori Memori.h "Memori.h"
- * @package   Token
- * @brief     Kelas yang digunakan untuk menyimpan memori kalkulator
+ * @package   Memori
+ * @brief     Kelas yang digunakan untuk menyimpan list ekspresi,
+ *            merupakan pembungkusan vector of ekspression.
  * @author    Ibrohim Kholilul Islam
  * @version   0.1
  * @date      Maret 2015
- * @warning   -
+ * @warning   Pada destructor, semua token yang terdapat pada ekspresi dihapus.
  * 
  */
+
 class Memori
 {
 public:

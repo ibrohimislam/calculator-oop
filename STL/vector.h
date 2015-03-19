@@ -5,11 +5,15 @@
 
 /**
  * Class vector
- *
- * vector adalah kelas yang diimplementasi berdasarkan STL C++ vector
- *
- * @author   Ibrohim Kholilul Islam
- * @package  STL
+ * 
+ * @class     vector vector.h "STL/vector.h"
+ * @package   STL
+ * @brief     Kelas vector yang diimplementasi berdasarkan STL C++
+ * @author    Ibrohim Kholilul Islam
+ * @version   0.1
+ * @date      Maret 2015
+ * @warning   -
+ * 
  */
 
 template <class T>

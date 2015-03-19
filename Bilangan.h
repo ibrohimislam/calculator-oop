@@ -8,8 +8,8 @@
 /**
  * Class Bilangan
  * 
- * @class     Bilangan bilangan.h "bilangan.h"
- * @package   Token
+ * @class     Bilangan Bilangan.h "Bilangan.h"
+ * @package   Parser
  * @brief     Kelas Abstrak yang digunakan untuk merepresentasikan bilangan
  * @author    Satria Priambada
  * @version   0.1

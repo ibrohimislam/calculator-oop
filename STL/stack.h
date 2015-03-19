@@ -4,9 +4,19 @@
 #include <cstdlib>
 #include <cstdio>
 
-/* Definisi */
+/**
+ * Class StackExp
+ * 
+ * @class     StackExp stack.h "STL/stack.h"
+ * @package   STL
+ * @brief     Kelas exception spesifik stack
+ * @author    Afrizal Fikri
+ * @version   0.1
+ * @date      Maret 2015
+ * @warning   -
+ * 
+ */
 
-/* Stack exception */
 class StackExp
 {
 public:
@@ -18,7 +28,19 @@ private:
 	int errCode;
 };
 
-/* Kelas stack */
+/**
+ * Class stack
+ * 
+ * @class     stack stack.h "STL/stack.h"
+ * @package   STL
+ * @brief     Kelas stack yang diimplementasi berdasarkan STL C++
+ * @author    Satria Priambada
+ * @version   0.1
+ * @date      Maret 2015
+ * @warning   -
+ * 
+ */
+
 template<class T>
 class stack 
 {
