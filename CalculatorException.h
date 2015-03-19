@@ -19,17 +19,43 @@
 class CalculatorException
 {
 public:
-	//ctor
+	/**
+	 * Constructor default
+	 *
+	 * Konstruktor yang digunakan untuk membuat Objek exception dengan pesan kosong
+	 *
+	 */
 	CalculatorException(){
 		MsgCalculatorExp = "";
 	}
+
+	/**
+	 * Constructor default
+	 *
+	 * Konstruktor yang digunakan untuk membuat Objek exception dengan pesan s
+	 *
+	 * @param s std::string
+	 *
+	 */
 	CalculatorException(const std::string& s){
 		MsgCalculatorExp = s;
 	}
-	//dtor
+	
+	/**
+	 * Destructor
+	 *
+	 * @param none
+	 */
 	~CalculatorException(){}
 
-	//tidak memerlukan opr= dan cctor
+	/**
+	 * Prosedur DisplayMsg
+	 *
+	 * Prosedur yang digunakan untuk menampilkan pesan kesalahan
+	 *
+	 * @param none
+	 *
+	 */
 	void DisplayMsg(){
 		std::cout << MsgCalculatorExp<<std::endl;
 	}

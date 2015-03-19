@@ -22,8 +22,35 @@
 
 class Bilangan: public Token {
 	public:
+		/**
+		 * Fungsi Display
+		 *
+		 * Fungsi untuk mendapatkan string Bilangan Arab untuk ditulis
+		 *
+		 * @param none
+		 * @return std::string
+		 */
+
 		virtual std::string Display() = 0;
+
+		/**
+		 * Fungsi GetType
+		 *
+		 * Fungsi untuk tipe polimorf token
+		 *
+		 * @param none
+		 * @return EnumType
+		 */
 		EnumType GetType();
+
+		/**
+		 * Fungsi GetValue
+		 *
+		 * Fungsi untuk mendapatkan nilai dari Bilangan Arab
+		 *
+		 * @param none
+		 * @return double
+		 */
 		virtual double GetValue() = 0; //deffered
 	private:
 };

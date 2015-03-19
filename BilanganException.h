@@ -19,17 +19,47 @@
 class BilanganException
 {
 public:
-	//ctor
+
+	/**
+	 * Constructor default
+	 *
+	 * Konstruktor yang digunakan untuk membuat Objek exception dengan pesan kosong
+	 *
+	 */
 	BilanganException(){
 		MsgBilanganExp = "";
 	}
+
+	/**
+	 * Constructor default
+	 *
+	 * Konstruktor yang digunakan untuk membuat Objek exception dengan pesan s
+	 *
+	 * @param s std::string
+	 *
+	 */
 	BilanganException(const std::string& s){
 		MsgBilanganExp = s;
 	}
-	//dtor
+
+	/**
+	 * Destructor
+	 *
+	 * @param none
+	 */
+
 	~BilanganException(){}
 
 	//tidak memerlukan opr= dan cctor
+
+	/**
+	 * Prosedur DisplayMsg
+	 *
+	 * Prosedur yang digunakan untuk menampilkan pesan kesalahan
+	 *
+	 * @param none
+	 *
+	 */
 	void DisplayMsg(){
 		std::cout << MsgBilanganExp<<std::endl;
 	}
