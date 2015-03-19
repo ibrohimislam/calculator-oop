@@ -11,12 +11,26 @@
 #include <string>
 #include <sstream>
 
+
+/**
+ * Class Arab
+ * 
+ * @class     Arab arab.h "arab.h"
+ * @package   Token
+ * @brief     Kelas yang digunakan untuk merepresentasikan bilangan arab
+ * @author    Satria Priambada
+ * @version   0.1
+ * @date      Maret 2015
+ * @warning   -
+ * 
+ */
+
 class Arab: public Bilangan{
 	public:
 		//ctor
-		Arab();
-		Arab(const double d);
-		Arab(const std::string& s);
+		Arab(); /* default constructor */
+		Arab(const double d); /* constructor with parameter double */
+		Arab(const std::string& s); /* constructor with parameter string */
 		//dtor
 		~Arab(){}
 		//cctor dan operator= tidak pernah dipakai karena tidak mungkin instansiasi
