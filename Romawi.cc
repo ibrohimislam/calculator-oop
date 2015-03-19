@@ -1,4 +1,5 @@
 #include "Romawi.h"
+#include <math.h>
 
 std::string Romawi:: Display(){
   int val = Value;
@@ -49,6 +50,14 @@ std::string Romawi:: Display(){
 Romawi::Romawi(){
   Value = 1;
 }
+
+Romawi::Romawi(const double d){
+  if ((d<=0) && (floor(d)==d))
+      throw BilanganException("Bukan bilangan romawi.");
+
+  Value = (int) d; 
+}
+
 
 Romawi::Romawi(const std::string& s){
   int rom_to_int[255];

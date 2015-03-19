@@ -1,2 +1,3 @@
-all:
-	g++ -o ParserToken Parser.cc Token.cc Operator.cc Perintah.cc Bilangan.cc Arab.cc Romawi.cc
+all: main
+main: Arab.cc Bilangan.cc Calculator.cc Driver.cc Expression.cc Memori.cc Operator.cc Parser.cc Penghitung.cc Perintah.cc Romawi.cc
+	g++ -g Arab.cc Bilangan.cc Calculator.cc Driver.cc Expression.cc Memori.cc Operator.cc Parser.cc Penghitung.cc Perintah.cc Romawi.cc -o main

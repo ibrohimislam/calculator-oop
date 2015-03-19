@@ -24,7 +24,6 @@ Memori::~Memori(){
 }
 void Memori::AddExpression(const Expression& E){
 	if(head < length){
-		std::cout << "fail\n";
 		int numEx,numToken;
 		int len = this->GetLength();
 		int vLen = VectorOfExpression.size();
@@ -37,20 +36,13 @@ void Memori::AddExpression(const Expression& E){
 			VectorOfExpression.pop_back();
 			vLen--;
 		}
-		std::cout << "head = length\n";
 		++head;
 		length = head;
-		std::cout << "sapisapisapi\n";
 		VectorOfExpression.push_back(E);
-		std::cout << "memori add expr" << VectorOfExpression[head-1].GetLength() << std::endl;
 	}else{//head = length karena head tidak mungkin lebih besar dari length
-		std::cout << "head = length\n";
 		++head;
 		length = head;
-		std::cout << "sapisapisapi\n";
 		VectorOfExpression.push_back(E);
-		std::cout << "memori add expr" << VectorOfExpression[head-1].GetLength() << std::endl;
-
 	}
 }
 
@@ -83,8 +75,7 @@ Expression& Memori::Redo(){
 	
 	assert(head < length);
 	++head;
-	std::cout << "redo " << VectorOfExpression[head-1].GetLength() << std::endl;
-
+	
 	return VectorOfExpression[head-1];
 }
 

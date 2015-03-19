@@ -15,6 +15,7 @@ class Romawi: public Bilangan{
 	public:
 		//ctor
 		Romawi();
+		Romawi(const double d);
 		Romawi(const std::string& s);
 		//dtor
 		~Romawi(){}

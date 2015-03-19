@@ -2,7 +2,10 @@
 #include "Penghitung.h"
 #include "PenghitungException.h"
 
-Penghitung::Penghitung() {}
+Penghitung::Penghitung() {
+	ModeSintaks = infix;
+	ModeMathLogic = math;
+}
 
 Penghitung::Penghitung(const Penghitung& p) {
 	ModeSintaks = p.ModeSintaks;
@@ -14,17 +17,13 @@ Penghitung::~Penghitung() {}
 // operator= tidak diperlukan karena tidak ada assignment
 
 double Penghitung::Calculate(Expression E) {
-	std::cout << ModeSintaks << std::endl;
 	if(ModeMathLogic == logic) {
-		std::cout << "Logic" << std::endl;
 		ParseInfix(E);
 	} else {
-		std::cout << "Math" << std::endl;
-
 		switch (ModeSintaks) {
-			infix : ParseInfix(E); break;
-			prefix : E.InvertExpression(); break;
-			postfix : break;
+			case infix : ParseInfix(E); break;
+			case prefix : E.InvertExpression(); break;
+			case postfix : break;
 		}
 	}
 	return CalculatePostfix(E);
@@ -112,7 +111,7 @@ void Penghitung::ParseInfix(Expression& E) {
 			}
 			else if (op.GetJenisOperator() == Not) {		// Not x = x - 2x + 1
 				i++;
-				if (i == E.GetLength()) throw // Expression incomplete
+				if (i == E.GetLength()) throw PenghitungException("expression incomplete");
 				cur = E.GetToken(i);
 				s2.AddToken(cur);
 				cur = new Arab(cur->Display());
@@ -128,20 +127,19 @@ void Penghitung::ParseInfix(Expression& E) {
 					s1.push(cur);
 				else {
 					Operator op2;
-					try {
-						while ( (op2 = Operator(s1.top()->Display())).GetType() == opr
-							&& (op2.GetJenisOperator() == kali || op2.GetJenisOperator() == bagi)
-						) {
-							s2.AddToken(&op2);
-							s1.pop();
-						}
-					} catch (StackExp& e) {}
+					while ( (!s1.empty()) && (op2 = Operator(s1.top()->Display())).GetType() == opr
+						&& (op2.GetJenisOperator() == kali || op2.GetJenisOperator() == bagi)
+					) {
+						s2.AddToken(&op2);
+						s1.pop();
+					}
 
 					s1.push(cur);
 				}
 			}
 		}
 	}
+	
 	while (!s1.empty()) {
 		s2.AddToken(s1.top());
 		s1.pop();

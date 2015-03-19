@@ -17,9 +17,6 @@ Expression Parser::Parse(const std::string& s){
 
 	char tempChar = s[0];
 	while (i < PanjangS){
-
-		std::cout << "sebelum: " << i << " " << PanjangS << std::endl;
-
 		int j=0;
 		
 		while ((tempChar == ' ') && (i < PanjangS))
@@ -32,11 +29,7 @@ Expression Parser::Parse(const std::string& s){
 		}
 		tempCStr[j] = 0;
 
-		std::cout << "sesudah: " << i << " " << PanjangS << std::endl;
-
 		std::string tempStr = tempCStr;
-
-		std::cout << "token: \"" << tempStr << "\"" << std::endl;
 
 		//Keluar loop bila menemukan spasi
 		int banyak_perintah = Perintah::BanyakPerintah;
@@ -89,8 +82,6 @@ Expression Parser::Parse(const std::string& s){
 
 		if (CurToken!=NULL)
 			tempExpression.AddToken(CurToken);
-
-		std::cout << "akhir: " << i << " " << PanjangS << std::endl;
 	}
 	//Keluar loop bila i >= dari PanjangS atau menemukan char '\0'
 	return tempExpression;

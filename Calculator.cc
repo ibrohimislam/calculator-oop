@@ -45,9 +45,9 @@ void Calculator::Run(){
 
 	string s;
 
-	while (1) {
-		
-		getline(cin, s);
+	getline(cin, s);
+
+	while (s!="exit") {	
 
 		Expression e = ParserCalculator.Parse(s);
 		Token* firstToken = e.GetToken(0);
@@ -61,9 +61,16 @@ void Calculator::Run(){
 			}
 		}
 		else {
-			try {
-				cout << "MAIN:: len" << e.GetLength() << endl;
-				cout << PenghitungCalculator.Calculate( e )<< endl;
+			try {				
+				double hasil = PenghitungCalculator.Calculate(e);
+				Bilangan* hasilB;
+				if (mode_bilangan == romawi)
+					hasilB = new Romawi(hasil);
+				else if (mode_bilangan == arab)
+					hasilB = new Arab(hasil);
+				cout << hasilB->Display() << endl;
+				delete hasilB;
+
 				MemCalculator->AddExpression(e);
 			} catch (PenghitungException& e) {
 				e.DisplayMsg();
@@ -72,6 +79,7 @@ void Calculator::Run(){
 			}
 		}
 
+		getline(cin, s);
 	}
 
 }
@@ -84,62 +92,112 @@ void Calculator::JalankanPerintah(Expression& E){
 	switch (cmdToken){
 		case 0 : 
 			{
-				Token* TokenParam = E.GetToken(1);
-				if (TokenParam->GetType() != bil) throw CalculatorException("[syntax error]");
-
-				Bilangan* bilParam = (Bilangan*) TokenParam;
-				int setParam = int(bilParam->GetValue());
-
-				switch (setParam) 
+				if (E.GetLength()==2)
 				{
-					case 0 : SetMode(math);break;
-					case 1 : SetMode(logic);break;
-					case 2 : SetJenisAngka(arab);break;
-					case 3 : SetJenisAngka(romawi); break;
-					case 4 : SetSintaks(prefix);break;
-					case 5 : SetSintaks(infix);break;
-					case 6 : SetSintaks(postfix);break;
+					Token* TokenParam = E.GetToken(1);
+					if (TokenParam->GetType() != bil) throw CalculatorException("[syntax error]");
 
+					Bilangan* bilParam = (Bilangan*) TokenParam;
+					int setParam = int(bilParam->GetValue());
+
+					switch (setParam) 
+					{
+						case 0 : SetMode(math);break;
+						case 1 : SetMode(logic);break;
+						case 2 : SetJenisAngka(arab);break;
+						case 3 : SetJenisAngka(romawi); break;
+						case 4 : SetSintaks(prefix);break;
+						case 5 : SetSintaks(infix);break;
+						case 6 : SetSintaks(postfix);break;
+
+					}
 				}
+				else
+					throw CalculatorException("[syntax error]");
 			}
 			break;
 		case 1 : 
 			{
-				Token* TokenParam = E.GetToken(1);
-				if (TokenParam->GetType() != bil) throw CalculatorException("[syntax error]");
+				int undoParam = 1;
 
-				Bilangan* bilParam = (Bilangan*) TokenParam;
-				int undoParam = int(bilParam->GetValue());
+				if (E.GetLength()==2)
+				{
+					Token* TokenParam = E.GetToken(1);
+					if (TokenParam->GetType() != bil) throw CalculatorException("[syntax error]");
+
+					Bilangan* bilParam = (Bilangan*) TokenParam;
+					undoParam = int(bilParam->GetValue());
+				}
+				else if (E.GetLength() > 2)
+					throw CalculatorException("[syntax error]");
 
 				if (MemCalculator->Undo(undoParam)){
 					std::cout << "[berhasil]\n";
 				}else{
-					std::cout << "[syntax error]\n";
+					std::cout << "[undo gagal]\n";
 				}
 			}
 			break;
 		case 2 :
 			{
-				Token* TokenParam = E.GetToken(1);
-				if (TokenParam->GetType() != bil) throw CalculatorException("[syntax error]");
+				int redoParam = 1;
 
-				Bilangan* bilParam = (Bilangan*) TokenParam;
-				int redoParam = int(bilParam->GetValue());
+				if (E.GetLength()==2)
+				{
+					Token* TokenParam = E.GetToken(1);
+					if (TokenParam->GetType() != bil) throw CalculatorException("[syntax error]");
+
+					Bilangan* bilParam = (Bilangan*) TokenParam;
+					redoParam = int(bilParam->GetValue());
+				}
+				else if (E.GetLength() > 2)
+					throw CalculatorException("[syntax error]");
 
 				for (int i = 0; i < redoParam; ++i) {
-					MemCalculator->Redo();
+					Expression ekspresi = MemCalculator->Redo();
+					Token* tempT;
+
+					int lenekspresi = ekspresi.GetLength();
+					for (int j = 0; j < lenekspresi-1; ++j){
+						tempT = ekspresi.GetToken(j);
+						std::cout << tempT->Display() << " ";
+					}
+
+					tempT = ekspresi.GetToken(lenekspresi-1);
+					std::cout << tempT->Display() << std::endl;
+
+					try {				
+						double hasil = PenghitungCalculator.Calculate(ekspresi);
+						Bilangan* hasilB;
+						if (mode_bilangan == romawi)
+							hasilB = new Romawi(hasil);
+						else if (mode_bilangan == arab)
+							hasilB = new Arab(hasil);
+						cout << hasilB->Display() << endl;
+
+						delete hasilB;
+					} catch (PenghitungException& thisexception) {
+						thisexception.DisplayMsg();
+					} catch (StackExp& thisexception) {
+						thisexception.printMsg();
+					}
 				}
 			}
 			break;
 		case 3 :
 			{
-				Token* TokenParam = E.GetToken(1);
-				if (TokenParam->GetType() != bil) throw CalculatorException("[syntax error]");
+				if (E.GetLength()==2)
+				{
+					Token* TokenParam = E.GetToken(1);
+					if (TokenParam->GetType() != bil) throw CalculatorException("[syntax error]");
 
-				Bilangan* bilParam = (Bilangan*) TokenParam;
-				int showMemParam = int(bilParam->GetValue());
+					Bilangan* bilParam = (Bilangan*) TokenParam;
+					int showMemParam = int(bilParam->GetValue());
 
-				MemCalculator->ShowMem(showMemParam);
+					MemCalculator->ShowMem(showMemParam);
+				}
+				else
+					throw CalculatorException("[syntax error]");
 			}
 			break;
 		case 4 :

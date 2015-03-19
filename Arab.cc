@@ -18,8 +18,6 @@ Arab::Arab(const double d) {
 
 
 Arab:: Arab(const std::string& s) {
-	std::cout << "\"" << s << "\""<< std::endl;
-
 	int val = 0;
 	int frac = 0;
 
