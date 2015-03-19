@@ -40,7 +40,7 @@ public:
 	Token* GetToken(int i) const;
 	int GetLength() const;
 	void AddToken(Token* T);
-	void InvertExpression();	// method pendukung
+	
 private:
 	vector<Token*> VectorOfToken;
 };
