@@ -3,6 +3,19 @@
 
 #include <string>
 
+/**
+ * Class CalculatorException
+ * 
+ * @class     CalculatorException CalculatorException.h "CalculatorException.h"
+ * @package   Token
+ * @brief     Kelas exception spesifik class Calculator
+ * @author    Satria Priambada
+ * @version   0.1
+ * @date      Maret 2015
+ * @warning   -
+ * 
+ */
+
 class CalculatorException
 {
 public:

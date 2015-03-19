@@ -11,6 +11,21 @@
 
 using namespace std;
 
+/**
+ * Class Expression
+ * 
+ * @class     Expression Expression.h "Expression.h"
+ * @package   Memori
+ * @brief     Kelas yang digunakan untuk merepresentasikan ekspresi,
+ *            merupakan pembungkusan vector of (pointer to token).
+ * @author    Satria Priambada
+ * @version   0.1
+ * @date      Maret 2015
+ * @warning   semua pointer token yang diberikan dapat ditunjuk oleh lebih dari 1 ekspresi.
+ * @warning   destructor tidak bertangung jawab kepada token yang diberikan.
+ * 
+ */
+
 class Expression
 {
 public:
