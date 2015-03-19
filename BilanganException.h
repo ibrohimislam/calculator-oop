@@ -7,7 +7,7 @@
  * Class BilanganException
  * 
  * @class     BilanganException BilanganException.h "BilanganException.h"
- * @package   Token
+ * @package   Parser
  * @brief     Kelas exception spesifik class Bilangan
  * @author    Satria Priambada
  * @version   0.1

@@ -2,6 +2,8 @@
 #define _ENUM_H_
 
 /**
+ * EnumType
+ *
  * @enum EnumType
  * 
  * Enumerasi yang digunakan untuk mengidentifikasi tipe polimorf suatu token
@@ -14,6 +16,8 @@ enum EnumType{
 };
 
 /**
+ * Enum EnumBilangan
+ * 
  * @enum EnumBilangan
  * 
  * Enumerasi yang digunakan untuk mengidentifikasi jenis bilangan
@@ -24,6 +28,8 @@ enum EnumBilangan{
 };
 
 /**
+ * Enum EnumOperator
+ * 
  * @enum EnumOperator
  * 
  * Enumerasi yang digunakan untuk mengidentifikasi jenis operator
@@ -44,6 +50,8 @@ enum EnumOperator{
 };
 
 /**
+ * Enum EnumPerintah
+ * 
  * @enum EnumPerintah
  * 
  * Enumerasi yang digunakan untuk mengidentifikasi jenis perintah
@@ -58,6 +66,8 @@ enum EnumPerintah {
 };
 
 /**
+ * Enum EnumSintaks
+ * 
  * @enum EnumSintaks
  * 
  * Enumerasi yang digunakan untuk mengidentifikasi jenis sintaks
@@ -69,6 +79,8 @@ enum EnumSintaks {
 };
 
 /**
+ * Enum EnumMathLogic
+ * 
  * @enum EnumMathLogic
  * 
  * Enumerasi yang digunakan untuk mengidentifikasi jenis perhitungan (matematika atau logika)

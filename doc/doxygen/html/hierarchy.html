@@ -8,6 +8,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -69,6 +77,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cari');
     </ul>
   </div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('hierarchy.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -94,13 +116,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cari');
 <tr id="row_1_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="d8/dbe/classCalculator.html" target="_self">Calculator</a></td><td class="desc">Class <a class="el" href="d8/dbe/classCalculator.html" title="Class Calculator. ">Calculator</a> </td></tr>
 <tr id="row_2_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="df/d30/classCalculatorException.html" target="_self">CalculatorException</a></td><td class="desc">Class <a class="el" href="df/d30/classCalculatorException.html" title="Class CalculatorException. ">CalculatorException</a> </td></tr>
 <tr id="row_3_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="de/d94/classExpression.html" target="_self">Expression</a></td><td class="desc">Class <a class="el" href="de/d94/classExpression.html" title="Class Expression. ">Expression</a> </td></tr>
-<tr id="row_4_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="df/df7/classMemori.html" target="_self">Memori</a></td><td class="desc"></td></tr>
+<tr id="row_4_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="df/df7/classMemori.html" target="_self">Memori</a></td><td class="desc">Class <a class="el" href="df/df7/classMemori.html" title="Class Memori. ">Memori</a> </td></tr>
 <tr id="row_5_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="d0/d40/classParser.html" target="_self">Parser</a></td><td class="desc">Class <a class="el" href="d0/d40/classParser.html" title="Class Parser. ">Parser</a> </td></tr>
 <tr id="row_6_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="df/d55/classParserException.html" target="_self">ParserException</a></td><td class="desc">Class <a class="el" href="df/d55/classParserException.html" title="Class ParserException. ">ParserException</a> </td></tr>
 <tr id="row_7_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="d3/dd5/classPenghitung.html" target="_self">Penghitung</a></td><td class="desc">Class <a class="el" href="d3/dd5/classPenghitung.html" title="Class Penghitung. ">Penghitung</a> </td></tr>
 <tr id="row_8_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="d1/de8/classPenghitungException.html" target="_self">PenghitungException</a></td><td class="desc">Class <a class="el" href="d1/de8/classPenghitungException.html" title="Class PenghitungException. ">PenghitungException</a> </td></tr>
 <tr id="row_9_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="d1/dc2/classstack.html" target="_self">stack&lt; T &gt;</a></td><td class="desc">Class stack </td></tr>
-<tr id="row_10_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="d8/d10/classStackExp.html" target="_self">StackExp</a></td><td class="desc"></td></tr>
+<tr id="row_10_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="d8/d10/classStackExp.html" target="_self">StackExp</a></td><td class="desc">Class <a class="el" href="d8/d10/classStackExp.html" title="Class StackExp. ">StackExp</a> </td></tr>
 <tr id="row_11_"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_11_" class="arrow" onclick="toggleFolder('11_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="d2/d6e/classToken.html" target="_self">Token</a></td><td class="desc">Class <a class="el" href="d2/d6e/classToken.html" title="Class Token. ">Token</a> </td></tr>
 <tr id="row_11_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span id="arr_11_0_" class="arrow" onclick="toggleFolder('11_0_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="d2/dac/classBilangan.html" target="_self">Bilangan</a></td><td class="desc">Class <a class="el" href="d2/dac/classBilangan.html" title="Class Bilangan. ">Bilangan</a> </td></tr>
 <tr id="row_11_0_0_"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="d0/d70/classArab.html" target="_self">Arab</a></td><td class="desc">Class <a class="el" href="d0/d70/classArab.html" title="Class Arab. ">Arab</a> </td></tr>
@@ -113,11 +135,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cari');
 </table>
 </div><!-- directory -->
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Dibangkitkan pada tanggal Kamis 19 Maret 2015 11:07:36 untuk Kalkulator Sakti oleh &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Dibangkitkan pada tanggal Kamis 19 Maret 2015 11:15:12 untuk Kalkulator Sakti oleh
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

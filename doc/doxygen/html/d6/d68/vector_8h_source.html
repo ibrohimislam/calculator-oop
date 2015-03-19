@@ -8,6 +8,14 @@
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
@@ -66,6 +74,21 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Cari');
       <li><a href="../../files.html"><span>Daftar&#160;File</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d6/d68/vector_8h_source.html','../../');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -80,11 +103,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Cari');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="../../dir_da775038c600be4dae68f1b9860d08c5.html">ibrohim</a></li><li class="navelem"><a class="el" href="../../dir_5a65046115a8c2aa36861a8a6807b454.html">oop002</a></li><li class="navelem"><a class="el" href="../../dir_94baf100cc9f21372891550e12ab8152.html">STL</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">vector.h</div>  </div>
@@ -231,11 +249,15 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Cari');
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="classvector_html"><div class="ttname"><a href="../../d7/dfc/classvector.html">vector</a></div><div class="ttdoc">Class vector. </div><div class="ttdef"><b>Definition:</b> vector.h:20</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Dibangkitkan pada tanggal Kamis 19 Maret 2015 11:07:36 untuk Kalkulator Sakti oleh &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="../../doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="../../dir_da775038c600be4dae68f1b9860d08c5.html">ibrohim</a></li><li class="navelem"><a class="el" href="../../dir_5a65046115a8c2aa36861a8a6807b454.html">oop002</a></li><li class="navelem"><a class="el" href="../../dir_94baf100cc9f21372891550e12ab8152.html">STL</a></li><li class="navelem"><b>vector.h</b></li>
+    <li class="footer">Dibangkitkan pada tanggal Kamis 19 Maret 2015 11:15:12 untuk Kalkulator Sakti oleh
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

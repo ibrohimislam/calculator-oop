@@ -7,6 +7,9 @@
 using namespace std;
 
 /**
+ * Class Memori
+ *
+ * @class     Memori Memori.h "Memori.h"
  * @package   Memori
  * @brief     Kelas yang digunakan untuk menyimpan list ekspresi,
  *            merupakan pembungkusan vector of ekspression.

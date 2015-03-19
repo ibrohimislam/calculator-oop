@@ -8,6 +8,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -67,6 +75,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cari');
     </ul>
   </div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('namespaces.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -91,16 +113,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cari');
 <tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">N</span></span><a class="el" href="d4/dd4/namespaceMemori.html" target="_self">Memori</a></td><td class="desc">Kelas yang digunakan untuk merepresentasikan ekspresi, merupakan pembungkusan vector of (pointer to token) </td></tr>
 <tr id="row_1_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">N</span></span><a class="el" href="df/d37/namespaceMenghitung.html" target="_self">Menghitung</a></td><td class="desc">Kelas yang digunakan untuk melakukan proses menghitung token </td></tr>
 <tr id="row_2_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">N</span></span><a class="el" href="d3/d71/namespaceParser.html" target="_self">Parser</a></td><td class="desc">Kelas yang digunakan untuk merepresentasikan bilangan arab </td></tr>
-<tr id="row_3_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">N</span></span><a class="el" href="d5/da1/namespaceSTL.html" target="_self">STL</a></td><td class="desc">Kelas stack yang diimplementasi berdasarkan <a class="el" href="d5/da1/namespaceSTL.html" title="Kelas stack yang diimplementasi berdasarkan STL C++. ">STL</a> C++ </td></tr>
-<tr id="row_4_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">N</span></span><a class="el" href="d3/d51/namespaceToken.html" target="_self">Token</a></td><td class="desc">Kelas exception spesifik class <a class="el" href="d2/dac/classBilangan.html" title="Class Bilangan. ">Bilangan</a> </td></tr>
+<tr id="row_3_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">N</span></span><a class="el" href="d5/da1/namespaceSTL.html" target="_self">STL</a></td><td class="desc">Kelas exception spesifik class stack </td></tr>
 </table>
 </div><!-- directory -->
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Dibangkitkan pada tanggal Kamis 19 Maret 2015 11:07:36 untuk Kalkulator Sakti oleh &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Dibangkitkan pada tanggal Kamis 19 Maret 2015 11:15:12 untuk Kalkulator Sakti oleh
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>
