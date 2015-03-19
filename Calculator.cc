@@ -1,4 +1,6 @@
 #include "Calculator.h"
+#include "CalculatorException.h"
+#include "PenghitungException.h"
 #include <string>
 //ctor
 Calculator::Calculator(){
@@ -51,16 +53,23 @@ void Calculator::Run(){
 		Token* firstToken = e.GetToken(0);
 		
 		if (firstToken->GetType() == cmd) {
-			JalankanPerintah(e);
+			try {
+				JalankanPerintah(e);
+			}
+			catch (CalculatorException& e) {
+				e.DisplayMsg();
+			}
 		}
 		else {
 			try {
 				cout << "MAIN:: len" << e.GetLength() << endl;
 				cout << PenghitungCalculator.Calculate( e )<< endl;
 				MemCalculator->AddExpression(e);
+			} catch (PenghitungException& e) {
+				e.DisplayMsg();
 			} catch (StackExp& e) {
 				e.printMsg();
-			};
+			}
 		}
 
 	}
@@ -76,8 +85,11 @@ void Calculator::JalankanPerintah(Expression& E){
 		case 0 : 
 			{
 				Token* TokenParam = E.GetToken(1);
+				if (TokenParam->GetType() != bil) throw CalculatorException("[syntax error]");
+
 				Bilangan* bilParam = (Bilangan*) TokenParam;
 				int setParam = int(bilParam->GetValue());
+
 				switch (setParam) 
 				{
 					case 0 : SetMode(math);break;
@@ -93,24 +105,41 @@ void Calculator::JalankanPerintah(Expression& E){
 			break;
 		case 1 : 
 			{
-				if (MemCalculator->Undo(((Bilangan*)E.GetToken(1))->GetValue())){
-					cout << "[berhasil]\n";
+				Token* TokenParam = E.GetToken(1);
+				if (TokenParam->GetType() != bil) throw CalculatorException("[syntax error]");
+
+				Bilangan* bilParam = (Bilangan*) TokenParam;
+				int undoParam = int(bilParam->GetValue());
+
+				if (MemCalculator->Undo(undoParam)){
+					std::cout << "[berhasil]\n";
 				}else{
-					cout << "[syntax error]\n";
+					std::cout << "[syntax error]\n";
 				}
 			}
 			break;
 		case 2 :
 			{
-				int param = ((Bilangan*)E.GetToken(1))->GetValue(); 
-				for (int i = 0; i < param; ++i) {
+				Token* TokenParam = E.GetToken(1);
+				if (TokenParam->GetType() != bil) throw CalculatorException("[syntax error]");
+
+				Bilangan* bilParam = (Bilangan*) TokenParam;
+				int redoParam = int(bilParam->GetValue());
+
+				for (int i = 0; i < redoParam; ++i) {
 					MemCalculator->Redo();
 				}
 			}
 			break;
 		case 3 :
 			{
-				MemCalculator->ShowMem(((Bilangan*)E.GetToken(1))->GetValue());
+				Token* TokenParam = E.GetToken(1);
+				if (TokenParam->GetType() != bil) throw CalculatorException("[syntax error]");
+
+				Bilangan* bilParam = (Bilangan*) TokenParam;
+				int showMemParam = int(bilParam->GetValue());
+
+				MemCalculator->ShowMem(showMemParam);
 			}
 			break;
 		case 4 :
