@@ -98,12 +98,15 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Cari');
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span><a class="code" href="../../d8/dcc/namespacestd.html">std</a>;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../df/df7/classMemori.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d4/dd4/namespaceMemori.html">Memori</a></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="../../d4/dd4/namespaceMemori.html">Memori</a>();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    ~<a class="code" href="../../d4/dd4/namespaceMemori.html">Memori</a>();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">// memori bertanggung jawab atas penghapusan token</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../df/df7/classMemori.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d4/dd4/namespaceMemori.html">Memori</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">//ctor</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="../../d4/dd4/namespaceMemori.html">Memori</a>();<span class="comment">/*default constructor*/</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">//dtor</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    ~<a class="code" href="../../d4/dd4/namespaceMemori.html">Memori</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// memori bertanggung jawab atas penghapusan token</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">//tidak diperlukan cctor dan opr= karena tidak pernah ada assignmen memori</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> AddExpression(<span class="keyword">const</span> <a class="code" href="../../de/d94/classExpression.html">Expression</a>&amp; E);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="../../de/d94/classExpression.html">Expression</a>&amp; GetExpression(<span class="keywordtype">int</span> i);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="../../d7/dfc/classvector.html">vector&lt;Expression&gt;</a>&amp; GetAllExpression();</div>
@@ -127,7 +130,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Cari');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Dibangkitkan pada tanggal Kamis 19 Maret 2015 11:05:07 untuk Kalkulator Sakti oleh &#160;<a href="http://www.doxygen.org/index.html">
+Dibangkitkan pada tanggal Kamis 19 Maret 2015 11:07:36 untuk Kalkulator Sakti oleh &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
