@@ -7,6 +7,8 @@
 /**
  * Class StackExp
  * 
+ * Kelas exception spesifik class stack
+ * 
  * @class     StackExp stack.h "STL/stack.h"
  * @package   STL
  * @brief     Kelas exception spesifik class stack
@@ -30,6 +32,8 @@ private:
 
 /**
  * Class stack
+ *
+ * Kelas stack yang diimplementasi berdasarkan STL C++
  * 
  * @class     stack stack.h "STL/stack.h"
  * @package   STL

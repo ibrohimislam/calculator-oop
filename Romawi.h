@@ -13,6 +13,8 @@
 
 /**
  * Class Romawi
+ *
+ * Kelas yang digunakan untuk merepresentasikan bilangan romawi
  * 
  * @class     Romawi Romawi.h "Romawi.h"
  * @package   Parser

@@ -9,10 +9,12 @@ using namespace std;
 /**
  * Class Memori
  *
+ * Kelas yang digunakan untuk menyimpan list ekspresi, merupakan
+ * pembungkusan vector of ekspression.
+ *
  * @class     Memori Memori.h "Memori.h"
  * @package   Memori
- * @brief     Kelas yang digunakan untuk menyimpan list ekspresi,
- *            merupakan pembungkusan vector of ekspression.
+ * @brief     Kelas yang digunakan untuk menyimpan list ekspresi.
  * @author    Ibrohim Kholilul Islam
  * @version   0.1
  * @date      Maret 2015

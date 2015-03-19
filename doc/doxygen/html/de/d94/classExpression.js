@@ -6,5 +6,6 @@ var classExpression =
     [ "AddToken", "de/d94/classExpression.html#a5e3c9fe32872a5c4a13b1188b024d151", null ],
     [ "GetLength", "de/d94/classExpression.html#a0fc88810ca770214d6d221ad711133dd", null ],
     [ "GetToken", "de/d94/classExpression.html#a8aff19bc0d16007c40ade71664771e4d", null ],
-    [ "operator=", "de/d94/classExpression.html#a50017a043b96ee516ed2cafad28bb509", null ]
+    [ "operator=", "de/d94/classExpression.html#a50017a043b96ee516ed2cafad28bb509", null ],
+    [ "VectorOfToken", "de/d94/classExpression.html#a62d41b0699d28167d1d28357c5c866bc", null ]
 ];

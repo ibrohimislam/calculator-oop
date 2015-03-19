@@ -5,5 +5,6 @@ var classRomawi =
     [ "Romawi", "d9/de3/classRomawi.html#a46332c134c2f38feb7787994bd99e3ad", null ],
     [ "~Romawi", "d9/de3/classRomawi.html#a208bcc4479304450d7b0f578534f18db", null ],
     [ "Display", "d9/de3/classRomawi.html#a630b1a4635acfaa7a3def12b5a6aaecc", null ],
-    [ "GetValue", "d9/de3/classRomawi.html#adc5a0a8e2ad13902f66da32e5ebe2bfe", null ]
+    [ "GetValue", "d9/de3/classRomawi.html#adc5a0a8e2ad13902f66da32e5ebe2bfe", null ],
+    [ "Value", "d9/de3/classRomawi.html#a3e4b59813abe2887a88258ac316e27d9", null ]
 ];

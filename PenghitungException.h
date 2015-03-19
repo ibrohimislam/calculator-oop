@@ -6,6 +6,8 @@
 
 /**
  * Class PenghitungException
+ *
+ * Kelas yang digunakan untuk melakukan proses exception penghitung
  * 
  * @class     PenghitungException PenghitungException.h "PenghitungException.h"
  * @package   Menghitung

@@ -14,5 +14,9 @@ var classvector =
     [ "push_back", "d7/dfc/classvector.html#ad76deb64969b591fe8accbd2f69ea271", null ],
     [ "reserve", "d7/dfc/classvector.html#ae37ac6075980a3113fc442ce4411204c", null ],
     [ "resize", "d7/dfc/classvector.html#a313d7dd651ab48eeddf7845cbd5bc5af", null ],
-    [ "size", "d7/dfc/classvector.html#abd541636a83700f5708ee109fca6796a", null ]
+    [ "size", "d7/dfc/classvector.html#abd541636a83700f5708ee109fca6796a", null ],
+    [ "_capacity", "d7/dfc/classvector.html#a1c2a061959c956eb85805934b00ad75d", null ],
+    [ "_size", "d7/dfc/classvector.html#adc0382744358059c7ed8c9315ea691aa", null ],
+    [ "buffer", "d7/dfc/classvector.html#adb51efa5b9d82cddfa401836401bb8f1", null ],
+    [ "Log", "d7/dfc/classvector.html#a71e90789f12e267399ac7387521cc548", null ]
 ];

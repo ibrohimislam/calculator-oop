@@ -8,6 +8,8 @@
 /**
  * Class Calculator
  * 
+ * Kelas utama kalkulator yang melakukan loop input-proses-output
+ * 
  * @class     Calculator Calculator.h "Calculator.h"
  * @package   Parser
  * @brief     Kelas utama kalkulator yang melakukan loop input-proses-output

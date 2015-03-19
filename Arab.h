@@ -12,6 +12,8 @@
 
 /**
  * Class Arab
+ *
+ * Kelas yang digunakan untuk merepresentasikan bilangan arab
  * 
  * @class     Arab Arab.h "Arab.h"
  * @package   Parser

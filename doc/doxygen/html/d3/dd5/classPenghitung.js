@@ -9,5 +9,7 @@ var classPenghitung =
     [ "ParseInfix", "d3/dd5/classPenghitung.html#a9a79a76c40718775b4e7bb0da7e398b8", null ],
     [ "ParsePrefix", "d3/dd5/classPenghitung.html#acda85405d8d4a66e9b32d79d493c36d6", null ],
     [ "SetMathLogic", "d3/dd5/classPenghitung.html#ac810fdb8a3c14ce1eada51519830d624", null ],
-    [ "SetSintaks", "d3/dd5/classPenghitung.html#aa47317ed3b4985c8fb59ac2695db4c56", null ]
+    [ "SetSintaks", "d3/dd5/classPenghitung.html#aa47317ed3b4985c8fb59ac2695db4c56", null ],
+    [ "ModeMathLogic", "d3/dd5/classPenghitung.html#ada6a61b4abe04793864ef38a9b496736", null ],
+    [ "ModeSintaks", "d3/dd5/classPenghitung.html#ae43b518225f5e7214ba8a06f8a13fb0d", null ]
 ];

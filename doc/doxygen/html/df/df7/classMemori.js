@@ -10,5 +10,8 @@ var classMemori =
     [ "Save", "df/df7/classMemori.html#a50d47e3155b87094ea21706cfc5f3b09", null ],
     [ "ShowAll", "df/df7/classMemori.html#a6b3d1bc5a0fd7c61546741ec96ff50ad", null ],
     [ "ShowMem", "df/df7/classMemori.html#a54eee01b6f3e33fbecd84bb8e9f44504", null ],
-    [ "Undo", "df/df7/classMemori.html#ad992ea2a1b19e5fd131f93bac469bd68", null ]
+    [ "Undo", "df/df7/classMemori.html#ad992ea2a1b19e5fd131f93bac469bd68", null ],
+    [ "head", "df/df7/classMemori.html#a9748fa465fa9736b8de83d724e578f62", null ],
+    [ "length", "df/df7/classMemori.html#a2f10008f6293c4542deab9eb0217f202", null ],
+    [ "VectorOfExpression", "df/df7/classMemori.html#a65dc4365b196005ba293855ae0c71fcb", null ]
 ];

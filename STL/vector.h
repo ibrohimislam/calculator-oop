@@ -5,6 +5,8 @@
 
 /**
  * Class vector
+ *
+ * Kelas vector yang diimplementasi berdasarkan STL C++
  * 
  * @class     vector vector.h "STL/vector.h"
  * @package   STL

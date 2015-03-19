@@ -14,6 +14,9 @@ using namespace std;
 /**
  * Class Expression
  * 
+ * Kelas yang digunakan untuk merepresentasikan ekspresi, merupakan 
+ * pembungkusan vector of (pointer to token).
+ *
  * @class     Expression Expression.h "Expression.h"
  * @package   Memori
  * @brief     Kelas yang digunakan untuk merepresentasikan ekspresi,

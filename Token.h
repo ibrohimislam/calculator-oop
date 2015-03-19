@@ -6,10 +6,12 @@
 
 /**
  * Class Token
+ *
+ * Kelas abstrak yang digunakan untuk merepresentasikan token
  * 
  * @class     Token Token.h "Token.h"
  * @package   Parser
- * @brief     Kelas yang digunakan untuk merepresentasikan token
+ * @brief     Kelas abstrak yang digunakan untuk merepresentasikan token
  * @author    Satria Priambada
  * @version   0.1
  * @date      Maret 2015

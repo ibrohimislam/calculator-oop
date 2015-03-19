@@ -6,6 +6,8 @@
 /**
  * Class ParserException
  * 
+ * Kelas yang digunakan untuk melakukan proses pembuatan execption dari parser
+ * 
  * @class     ParserException ParserException.h "ParserException.h"
  * @package   Parser
  * @brief     Kelas yang digunakan untuk melakukan proses pembuatan execption dari parser

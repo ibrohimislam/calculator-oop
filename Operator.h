@@ -7,6 +7,8 @@
 #include <string>
 /**
  * Class Operator
+ *
+ * Kelas yang digunakan untuk merepresentasikan token operator
  * 
  * @class     Operator Operator.h "Operator.h"
  * @package   Parser

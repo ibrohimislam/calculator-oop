@@ -7,6 +7,8 @@
 #include <string>
 /**
  * Class Perintah
+ *
+ * Kelas yang digunakan untuk merepresentasikan token perintah
  * 
  * @class     Perintah Perintah.h "Perintah.h"
  * @package   Parser

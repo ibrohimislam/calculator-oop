@@ -9,6 +9,8 @@
 
 /**
  * Class Penghitung
+ *
+ * Kelas yang digunakan untuk melakukan proses menghitung token
  * 
  * @class     Penghitung Penghitung.h "Penghitung.h"
  * @package   Menghitung

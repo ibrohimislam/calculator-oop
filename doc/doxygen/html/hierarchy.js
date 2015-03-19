@@ -5,6 +5,7 @@ var hierarchy =
     [ "CalculatorException", "df/d30/classCalculatorException.html", null ],
     [ "Expression", "de/d94/classExpression.html", null ],
     [ "Memori", "df/df7/classMemori.html", null ],
+    [ "stack< T >::node", "d0/d85/structstack_1_1node.html", null ],
     [ "Parser", "d0/d40/classParser.html", null ],
     [ "ParserException", "df/d55/classParserException.html", null ],
     [ "Penghitung", "d3/dd5/classPenghitung.html", null ],

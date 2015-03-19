@@ -19,6 +19,8 @@ using namespace std;
 
 /**
  * Class Parser
+ *
+ * Kelas yang digunakan untuk melakukan proses parsing string
  * 
  * @class     Parser parser.h "parser.h"
  * @package   Parser
