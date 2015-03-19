@@ -7,7 +7,11 @@ var NAVTREE =
     [ "Struktur Data", null, [
       [ "Struktur Data", "annotated.html", "annotated" ],
       [ "Indeks Struktur Data", "classes.html", null ],
-      [ "Hierarki Kelas", "hierarchy.html", "hierarchy" ]
+      [ "Hierarki Kelas", "hierarchy.html", "hierarchy" ],
+      [ "Variabel Data", "functions.html", [
+        [ "Semua", "functions.html", null ],
+        [ "Fungsi", "functions_func.html", null ]
+      ] ]
     ] ],
     [ "File-file", null, [
       [ "Daftar File", "files.html", "files" ]

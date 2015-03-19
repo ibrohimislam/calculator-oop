@@ -15,6 +15,8 @@
  *
  * Kelas yang digunakan untuk merepresentasikan bilangan arab
  * 
+ * cctor dan operator= tidak pernah dipakai
+ *
  * @class     Arab Arab.h "Arab.h"
  * @package   Parser
  * @brief     Kelas yang digunakan untuk merepresentasikan bilangan arab
@@ -27,14 +29,66 @@
 
 class Arab: public Bilangan{
 	public:
-		//ctor
+		/**
+		 * Constructor default
+		 *
+		 * Konstruktor yang digunakan untuk membuat Objek arab dengan nilai 0
+		 *
+		 */
+
 		Arab(); /* default constructor */
-		Arab(const double d); /* constructor with parameter double */
+		
+		/**
+		 * Constructor with parameter double
+		 *
+		 * Konstruktor yang digunakan untuk membuat Objek arab dengan nilai 
+		 * double yang diberikan
+		 *
+		 * @param d double
+		 * @pre d terdefinisi
+		 */
+
+		Arab(const double d);
+
+		/**
+		 * Constructor with parameter string
+		 *
+		 * Konstruktor yang digunakan untuk membuat Objek arab dari nilai 
+		 * string yang diberikan
+		 *
+		 * @param s string
+		 * @pre s terdefinisi
+		 */
+
 		Arab(const std::string& s); /* constructor with parameter string */
-		//dtor
+
+		/**
+		 * Destructor
+		 *
+		 * @param none
+		 */
+
 		~Arab(){}
-		//cctor dan operator= tidak pernah dipakai karena tidak mungkin instansiasi
+		
+		/**
+		 * Fungsi GetValue
+		 *
+		 * Fungsi untuk mendapatkan nilai dari Bilangan Arab
+		 *
+		 * @param none
+		 * @return double
+		 */
+
 		double GetValue();
+
+		/**
+		 * Fungsi Display
+		 *
+		 * Fungsi untuk mendapatkan string untuk ditampilkan
+		 *
+		 * @param none
+		 * @return string
+		 */
 		std::string Display();
 
 	private:

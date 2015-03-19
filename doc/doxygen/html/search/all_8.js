@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['romawi',['Romawi',['../d9/de3/classRomawi.html',1,'']]]
+  ['operator',['Operator',['../d4/dad/classOperator.html',1,'']]]
 ];

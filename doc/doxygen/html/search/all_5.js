@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['node',['node',['../d0/d85/structstack_1_1node.html',1,'stack']]]
+  ['getvalue',['GetValue',['../d0/d70/classArab.html#ac0fb43a1da728805bec9add68fd46fa0',1,'Arab']]]
 ];

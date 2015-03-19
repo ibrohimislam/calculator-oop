@@ -194,6 +194,8 @@ var NAVTREEINDEX0 =
 "dir_94baf100cc9f21372891550e12ab8152.html":[2,0,0,0,0,0],
 "dir_da775038c600be4dae68f1b9860d08c5.html":[2,0,0,0],
 "files.html":[2,0],
+"functions.html":[1,3,0],
+"functions_func.html":[1,3,1],
 "hierarchy.html":[1,2],
 "index.html":[],
 "namespaces.html":[0,0],

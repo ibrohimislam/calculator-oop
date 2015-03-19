@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['read',['read',['../d3/dd6/structcmd_8h.html#a9c7b76d5266903891c803132d51ccb90',1,'structcmd.h']]]
+  ['_7earab',['~Arab',['../d0/d70/classArab.html#a2629b0540731753334ebb19161774f7a',1,'Arab']]]
 ];

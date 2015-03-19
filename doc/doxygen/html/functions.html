@@ -8,6 +8,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -73,12 +81,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cari');
     <ul class="tablist">
       <li class="current"><a href="functions.html"><span>Semua</span></a></li>
       <li><a href="functions_func.html"><span>Fungsi</span></a></li>
-      <li><a href="functions_vars.html"><span>Variabel</span></a></li>
-      <li><a href="functions_enum.html"><span>Enumerasi</span></a></li>
-      <li><a href="functions_eval.html"><span>Nilai&#160;enumerasi</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('functions.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -95,43 +114,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cari');
 
 <div class="contents">
 <div class="textblock">Berikut ini daftar seluruh variabel anggota struct dan union yang didokumentasikan, dengan tautan ke dokumentasi struct/union untuk setiap variabel:</div><ul>
-<li>AnotherEnum
-: <a class="el" href="df/da6/classTest.html#a34b5b35cdcd492c108e62275d647bcf4">Test</a>
+<li>Arab()
+: <a class="el" href="d0/d70/classArab.html#afdddf6ff9c7724ddb71c625db0847893">Arab</a>
 </li>
-<li>EnumType
-: <a class="el" href="df/da6/classTest.html#a26bf93efdaea3c6e2cfa4119c3755d3f">Test</a>
+<li>Display()
+: <a class="el" href="d0/d70/classArab.html#a96e515d21840b8ddfe50414505618200">Arab</a>
 </li>
-<li>EVal1
-: <a class="el" href="df/da6/classTest.html#a26bf93efdaea3c6e2cfa4119c3755d3faacfab1e4105c05a2e503931a0e82b5b0">Test</a>
+<li>GetValue()
+: <a class="el" href="d0/d70/classArab.html#ac0fb43a1da728805bec9add68fd46fa0">Arab</a>
 </li>
-<li>EVal2
-: <a class="el" href="df/da6/classTest.html#a26bf93efdaea3c6e2cfa4119c3755d3fae2fa04fb1c4db1f7d72b8781ba19ffcc">Test</a>
-</li>
-<li>member()
-: <a class="el" href="df/da6/classTest.html#ad86c7affdfb5ca8e720f44ef56169c50">Test</a>
-</li>
-<li>TEnum
-: <a class="el" href="df/da6/classTest.html#ad8d13fe56b896633273087859b89a1a3">Test</a>
-</li>
-<li>V1
-: <a class="el" href="df/da6/classTest.html#a34b5b35cdcd492c108e62275d647bcf4a4250af92f4c971e7217dfa695b169d33">Test</a>
-</li>
-<li>V2
-: <a class="el" href="df/da6/classTest.html#a34b5b35cdcd492c108e62275d647bcf4ac65e3839243b8dcbdf72157f108265b2">Test</a>
-</li>
-<li>Val1
-: <a class="el" href="df/da6/classTest.html#ad8d13fe56b896633273087859b89a1a3a24d1337b7c053feaf5f44846fb7785a8">Test</a>
-</li>
-<li>value
-: <a class="el" href="df/da6/classTest.html#ad55002283eba8ffa062dfb849f6c077c">Test</a>
+<li>~Arab()
+: <a class="el" href="d0/d70/classArab.html#a2629b0540731753334ebb19161774f7a">Arab</a>
 </li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Dibangkitkan pada tanggal Kamis 19 Maret 2015 10:52:55 untuk Kalkulator Sakti oleh &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Dibangkitkan pada tanggal Kamis 19 Maret 2015 12:31:11 untuk Kalkulator Sakti oleh
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>
