@@ -7,10 +7,25 @@
 #include "Operator.h"
 #include "STL/stack.h"
 
+/**
+ * Class Penghitung
+ * 
+ * @class     Penghitung Penghitung.h "Penghitung.h"
+ * @package   Menghitung
+ * @brief     Kelas yang digunakan untuk melakukan proses menghitung token
+ * @author    Afrizal Fikri
+ * @version   0.1
+ * @date      Maret 2015
+ * @warning   -
+ * 
+ */
+
 class Penghitung {
 public:
-	Penghitung();
-	Penghitung(const Penghitung&);
+	//ctor
+	Penghitung();/*default constructor*/
+	Penghitung(const Penghitung&);/*cctor*/
+	//dtor
 	~Penghitung();
 	// operator= tidak diperlukan karena tidak ada pointer
 
