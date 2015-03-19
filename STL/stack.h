@@ -5,18 +5,18 @@
 #include <cstdio>
 
 /**
- * Class StackExp
+ * Class stack
  * 
- * @class     StackExp stack.h "STL/stack.h"
+ * @class     stack stack.h "STL/stack.h"
  * @package   STL
- * @brief     Kelas exception spesifik stack
+ * @brief     Kelas stack yang diimplementasi berdasarkan STL C++
  * @author    Afrizal Fikri
  * @version   0.1
  * @date      Maret 2015
  * @warning   -
  * 
  */
-
+ 
 class StackExp
 {
 public:
@@ -28,18 +28,6 @@ private:
 	int errCode;
 };
 
-/**
- * Class stack
- * 
- * @class     stack stack.h "STL/stack.h"
- * @package   STL
- * @brief     Kelas stack yang diimplementasi berdasarkan STL C++
- * @author    Satria Priambada
- * @version   0.1
- * @date      Maret 2015
- * @warning   -
- * 
- */
 
 template<class T>
 class stack 

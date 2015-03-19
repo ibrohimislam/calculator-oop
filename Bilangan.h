@@ -18,7 +18,7 @@
  * 
  */
 
-class Bilangan: public Token{
+class Bilangan: public Token {
 	public:
 		virtual std::string Display() = 0;
 		EnumType GetType();
