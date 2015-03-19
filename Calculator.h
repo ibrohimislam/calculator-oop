@@ -22,17 +22,74 @@
 
 class Calculator {
 public:
-	//ctor
+	/**
+	 * Constructor default
+	 *
+	 * Konstruktor yang digunakan untuk membuat Objek calculator dengan mode default
+	 *
+	 * @param none
+	 * @return double
+	 */
+
 	Calculator();
-	//dtor
+
+	/**
+	 * Destructor
+	 *
+	 * @param none
+	 */
+
 	~Calculator();
 	//tidak diperlukan cctor dan opr= karena tidak pernah ada passing calculator
 	//Setter
+
+	/**
+	 * Prosedur SetMode
+	 *
+	 * Prosedur yang digunakan untuk mengubah Mode Math dan Logic
+	 *
+	 * @param E EnumMathLogic
+	 */
+
 	void SetMode(EnumMathLogic E);
+
+	/**
+	 * Prosedur SetSintaks
+	 *
+	 * Prosedur yang digunakan untuk mengubah Mode Sintaks
+	 *
+	 * @param S EnumSintaks
+	 */
+
 	void SetSintaks(EnumSintaks S);
+
+	/**
+	 * Prosedur SetJenisAngka
+	 *
+	 * Prosedur yang digunakan untuk mengubah Mode Jenis Angka
+	 *
+	 * @param B EnumBilangan
+	 */
 	void SetJenisAngka(EnumBilangan B);
 	//Eksekusi
+
+	/**
+	 * Prosedur Run
+	 *
+	 * Prosedur yang melakukan rutin input-proses-output
+	 *
+	 * @param none
+	 */
+
 	void Run();
+
+	/**
+	 * Prosedur JalankanPerintah
+	 *
+	 * Prosedur yang melakukan expresi perintah
+	 *
+	 * @param E Expression
+	 */
 	void JalankanPerintah(Expression& E);
 
 

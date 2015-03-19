@@ -55,7 +55,22 @@ class stack
 	typedef node infotype;
 
 public:
+	/**
+	 * Constructor default
+	 *
+	 * Konstruktor yang digunakan untuk membuat Objek stack
+	 *
+	 */
+
 	stack() : Size(0), topElmt(NULL) {}
+
+	/**
+	 * Copy Constructor
+	 *
+	 * Konstruktor yang digunakan untuk membuat objek stack salinan dari objek stack
+	 *
+	 */
+
 	stack(const stack& s) : Size(0), topElmt(NULL) {
 		T* temp = new T[Size];
 		int topTmp = 0;
@@ -72,6 +87,13 @@ public:
 
 		delete[] temp;
 	}
+
+	/**
+	 * Operator assignment
+	 *
+	 * Fungsi yang digunakan untuk menyalin objek stack dari objek stack
+	 *
+	 */
 
 	stack& operator= (const stack<T>& s) {
 		T* temp = new T[Size];
@@ -95,11 +117,27 @@ public:
 		return *this;
 	}
 
+	/**
+	 * Destructor
+	 *
+	 * @param none
+	 */
 	~stack() {
 		while (!empty()) {
 			pop();
 		}
 	}
+
+	/**
+	 * Prosedur Pop
+	 *
+	 * Prosedur yang digunakan untuk mengeluarkan elemen teratas dari stack.
+	 *
+	 * @param none
+	 * @pre stack tidak kosong 
+	 * @post elemen teratas dikeluarkan dari stack
+	 *
+	 */
 
 	void pop() {
 		if (empty()) throw StackExp(0);
@@ -109,6 +147,17 @@ public:
 		topElmt = next;
 		Size--;
 	}
+
+	/**
+	 * Prosedur Push
+	 *
+	 * Prosedur yang digunakan untuk menambahkan elemen ke elemen teratas stack.
+	 *
+	 * @param T e
+	 * @pre stack tidak penuh 
+	 * @post e ditambahkan sebagai elemen teratas stack
+	 *
+	 */
 
 	void push(T e) {
 		infotype* last = new infotype;
@@ -120,11 +169,44 @@ public:
 		Size++;
 	}
 
+	/**
+	 * Fungsi Top
+	 *
+	 * Fungsi yang digunakan untuk mengembalikan elemen teratas stack.
+	 *
+	 * @param none
+	 * @pre stack tidak kosong 
+	 * @return T
+	 *
+	 */
+
 	T top() { 
 		if (empty()) throw StackExp(0);
 		return topElmt->info; 
 	}
+
+	/**
+	 * Fungsi Size
+	 *
+	 * Fungsi yang digunakan untuk mengembalikan ukuran stack.
+	 *
+	 * @param none
+	 * @return integer
+	 *
+	 */
+
 	int size() { return Size; }
+
+	/**
+	 * Fungsi Empty
+	 *
+	 * Fungsi yang digunakan untuk mengembalikan apakah stack kosong.
+	 *
+	 * @param none
+	 * @return bool
+	 *
+	 */
+	 
 	bool empty() { return topElmt == NULL; }
 
 private:

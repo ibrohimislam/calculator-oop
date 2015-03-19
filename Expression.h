@@ -33,15 +33,72 @@ class Expression
 {
 public:
 	//ctor
+
+	/**
+	 * Constructor default
+	 *
+	 * Konstruktor yang digunakan untuk membuat Objek Expression kosong
+	 *
+	 */
+
 	Expression(){}
+
+	/**
+	 * Copy Constructor
+	 *
+	 * Konstruktor yang digunakan untuk membuat Objek Expression dari Objek Expression lain.
+	 *
+	 */
+
 	Expression(const Expression& E1);
 	//dtor tidak bertangung jawab kepada token yang diberikan
+	
+	/**
+	 * Destructor
+	 *
+	 * @param none
+	 */
 	~Expression();
-	//tidak diperlukan nilai cctor karena tidak ada assign ekspresi
-	//operator=
+
+	/**
+	 * Operator assignment
+	 *
+	 * Fungsi yang digunakan untuk menyalin objek ekspresi dari objek ekspresi
+	 *
+	 */
+
 	Expression& operator= (const Expression& E1);
+
+	/**
+	 * Fungsi GetToken
+	 *
+	 * Fungsi yang mengembalikan pointer token ke i
+	 *
+	 * @param i integer
+	 * @return pointer to Token
+	 */ 
+
 	Token* GetToken(int i) const;
+
+	/**
+	 * Fungsi GetLength
+	 *
+	 * Fungsi yang mengembalikan panjang ekspresi
+	 *
+	 * @param none
+	 * @return integer
+	 */ 
+
 	int GetLength() const;
+
+	/**
+	 * prosedur AddToken
+	 *
+	 * Prosedur yang digunakan untuk menambahkan Token ke akhir ekspresi
+	 *
+	 * @param T Pointer to Token
+	 */
+
 	void AddToken(Token* T);
 	
 private:

@@ -21,10 +21,54 @@
 template <class T>
 class  vector {
 public:
+    /**
+     * Constructor default
+     *
+     * Konstruktor yang digunakan untuk membuat Objek vector
+     *
+     */
     vector();
+    
+    /**
+     * Constructor dengan parameter size
+     *
+     * Konstruktor yang digunakan untuk membuat Objek vector dengan ukuran size
+     *
+     * @param size integer
+     *
+     */
+
     vector(unsigned int size);
+
+    /**
+     * Constructor dengan parameter size dan initial
+     *
+     * Konstruktor yang digunakan untuk membuat Objek vector dengan ukuran size dan
+     * diinisialisasi dengan nilai initial
+     *
+     * @param size integer
+     * @param initial T
+     *
+     */
+
     vector(unsigned int size, const T & initial);
+
+    /**
+     * Copy Constructor
+     *
+     * Konstruktor yang digunakan untuk membuat Objek vector dari Objek vector yang
+     * telah terdefinisi.
+     *
+     * @param v vector<T>
+     *
+     */
     vector(const vector<T>& v);
+
+    /**
+     * Destructor
+     *
+     * @param none
+     */
     ~vector();
 
     unsigned int capacity() const;

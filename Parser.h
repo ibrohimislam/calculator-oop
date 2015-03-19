@@ -33,12 +33,40 @@ using namespace std;
  */
 class Parser{
 	public:
-		//ctor default arab
+		/**
+		 * Constructor default
+		 *
+		 * Konstruktor yang digunakan untuk membuat Objek Operator
+		 *
+		 */
+
 		Parser() {ModeB = (EnumBilangan)0;}/*default constructor*/
-		//dtor
+		
+		/**
+		 * Destructor
+		 *
+		 * @param none
+		 */
+
 		~Parser(){}
 		//operator= dan dan cctor tidak diperlukan karena tidak akan ada inisialisasi objek parser ke parser lain
+		
+		/**
+		 * Prosedur SetModeBilangan
+		 *
+		 * Prosedur yang digunakan untuk mengubah Mode Bilangan
+		 *
+		 * @param B EnumBilangan
+		 */
 		void SetModeBilangan(EnumBilangan B);
+
+		/**
+		 * Fungsi Parse
+		 *
+		 * Fungsi yang digunakan untuk parsing string
+		 *
+		 * @param s std::string
+		 */
 		Expression Parse(const std::string& s);
 	private:
 		EnumBilangan ModeB;

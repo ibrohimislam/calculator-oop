@@ -21,15 +21,65 @@
  */
 class Operator : public Token {
 	public:
-		//ctor
+		/**
+		 * Constructor default
+		 *
+		 * Konstruktor yang digunakan untuk membuat Objek Operator
+		 *
+		 */
+
 		Operator() {}/*default constructor*/
+
+		/**
+		 * Constructor with parameter string
+		 *
+		 * Konstruktor yang digunakan untuk membuat Objek operator dari nilai 
+		 * string yang diberikan
+		 *
+		 * @param s string
+		 * @pre s terdefinisi
+		 */
+
 		Operator(std::string _s);/*consturctor with parameter string*/
-		//dtor
+		
+		/**
+		 * Destructor
+		 *
+		 * @param none
+		 */
 		~Operator(){}
+		
 		//cctor dan operator= tidak dibutuhkan karena tidak akan dilakukan assignment antar operator
+		
+		/**
+		 * Fungsi GetJenisOperator
+		 * 
+		 * @param none
+		 * return  EnumOperator
+		 */
 		EnumOperator GetJenisOperator();
+
+		/**
+		 * Fungsi Display
+		 *
+		 * Fungsi untuk mendapatkan string untuk ditampilkan
+		 *
+		 * @param none
+		 * @return string
+		 */
+
 		std::string Display();
+		
+		/**
+		 * Fungsi GetType
+		 *
+		 * Fungsi untuk tipe polimorf token
+		 *
+		 * @param none
+		 * @return EnumType
+		 */
 		EnumType GetType();
+		
 		static std::string KarakterOperator[];
 		static int BanyakOperator;
 	private:
