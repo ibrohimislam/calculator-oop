@@ -14,12 +14,13 @@ public:
 	~Penghitung();
 	// operator= tidak diperlukan karena tidak ada pointer
 
-	double Calculate(Expression E);
-	void SetSintaks(EnumSintaks Mode);
-	void SetMathLogic(EnumMathLogic Mode);
-	double CalculatePostfix(Expression& E);
-	void ParseInfix(Expression& E);
-	double CalculateAtom(double a, double b, Operator* o);
+	double Calculate(Expression);
+	void SetSintaks(EnumSintaks);
+	void SetMathLogic(EnumMathLogic);
+	double CalculatePostfix(Expression&);
+	void ParseInfix(Expression&);
+	void ParsePrefix(Expression&);
+	double CalculateAtom(double, double, Operator*);
 
 private:
 	EnumSintaks ModeSintaks;

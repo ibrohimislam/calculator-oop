@@ -22,7 +22,7 @@ double Penghitung::Calculate(Expression E) {
 	} else {
 		switch (ModeSintaks) {
 			case infix : ParseInfix(E); break;
-			case prefix : E.InvertExpression(); break;
+			case prefix : ParsePrefix(E); break;
 			case postfix : break;
 		}
 	}
@@ -88,40 +88,34 @@ double Penghitung::CalculatePostfix(Expression& E) {
 	return s.top();
 }
 
-void Penghitung::ParsePostfix(Expression& E)
+/**
+ *algo :
+ *1.If the prefix string is a single variable, it is its own postfix equivalent
+ *2.Let op be the first operator of the prefix string
+ *3.Find the first operand, opnd1 of the string.Convert it to postfix and call it post1.
+ *4.Find the second operand, opnd2, of the string.Convert it to postfix and cal it post2.
+ *5.Concatenate post1, post2, and op.
+ */
+void Penghitung::ParsePrefix(Expression& E)
 {
-	int i, j, ct = 1, z = 0;
-	char ch,opnd1,opnd2;
+	int i, j;
+	EnumType last = opr;
+	stack<Token*> ops;
+	Expression res;
 
-	stack stk;
+	for (i = 0; i < E.GetLength(); i++) ops.push(E.GetToken(i));
 
-	for(i=0;instr[i]!=;i++)
-	{
-		ch=instr[i];
-		if(isdigit(ch))
+	while (!ops.empty()) {
+		Token* cur = E.GetToken(i);
+		if (cur->GetType() == bil && last == bil)
 		{
-			push(&stk,ch);
+			Token* bef = res.GetToken(res.GetLength() - 1);
+			res.AddToken(bef);
 		}
-		else
-		{
-			if(ct==1)
-			{
-				opnd1=pop(&stk);
-				opnd2=pop(&stk);
-				outstr[z++]=opnd1;
-				outstr[z++]=opnd2;
-				outstr[z++]=ch;
-				ct++;
-			}
-			else
-			{
-				opnd2=pop(&stk);
-				outstr[z++]=opnd2;
-				outstr[z++]=ch;
-			}
-		}
+		last = cur->GetType();
+		res.AddToken(cur);
 	}
-	outstr[z]=;
+	E = res;
 }
 
 void Penghitung::ParseInfix(Expression& E) {
