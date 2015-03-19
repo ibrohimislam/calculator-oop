@@ -18,7 +18,7 @@ using namespace std;
  * @package   Memori
  * @brief     Kelas yang digunakan untuk merepresentasikan ekspresi,
  *            merupakan pembungkusan vector of (pointer to token).
- * @author    Satria Priambada
+ * @author    Ibrohim Kholilul Islam
  * @version   0.1
  * @date      Maret 2015
  * @warning   semua pointer token yang diberikan dapat ditunjuk oleh lebih dari 1 ekspresi.

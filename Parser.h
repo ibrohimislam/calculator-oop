@@ -17,10 +17,22 @@
 
 using namespace std;
 
+/**
+ * Class Parser
+ * 
+ * @class     Parser parser.h "parser.h"
+ * @package   Parser
+ * @brief     Kelas yang digunakan untuk melakukan proses parsing string
+ * @author    Satria Priambada
+ * @version   0.1
+ * @date      Maret 2015
+ * @warning   -
+ * 
+ */
 class Parser{
 	public:
 		//ctor default arab
-		Parser() {ModeB = (EnumBilangan)0;}
+		Parser() {ModeB = (EnumBilangan)0;}/*default constructor*/
 		//dtor
 		~Parser(){}
 		//operator= dan dan cctor tidak diperlukan karena tidak akan ada inisialisasi objek parser ke parser lain

@@ -7,7 +7,7 @@
  * Class CalculatorException
  * 
  * @class     CalculatorException CalculatorException.h "CalculatorException.h"
- * @package   Token
+ * @package   Parser
  * @brief     Kelas exception spesifik class Calculator
  * @author    Satria Priambada
  * @version   0.1

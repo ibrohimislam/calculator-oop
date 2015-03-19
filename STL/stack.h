@@ -9,7 +9,7 @@
  * 
  * @class     StackExp stack.h "STL/stack.h"
  * @package   STL
- * @brief     Kelas exception spesifik stack
+ * @brief     Kelas exception spesifik class stack
  * @author    Afrizal Fikri
  * @version   0.1
  * @date      Maret 2015
@@ -34,7 +34,7 @@ private:
  * @class     stack stack.h "STL/stack.h"
  * @package   STL
  * @brief     Kelas stack yang diimplementasi berdasarkan STL C++
- * @author    Satria Priambada
+ * @author    Afrizal Fikri
  * @version   0.1
  * @date      Maret 2015
  * @warning   -
