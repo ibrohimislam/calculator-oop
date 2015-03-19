@@ -88,6 +88,42 @@ double Penghitung::CalculatePostfix(Expression& E) {
 	return s.top();
 }
 
+void Penghitung::ParsePostfix(Expression& E)
+{
+	int i, j, ct = 1, z = 0;
+	char ch,opnd1,opnd2;
+
+	stack stk;
+
+	for(i=0;instr[i]!=;i++)
+	{
+		ch=instr[i];
+		if(isdigit(ch))
+		{
+			push(&stk,ch);
+		}
+		else
+		{
+			if(ct==1)
+			{
+				opnd1=pop(&stk);
+				opnd2=pop(&stk);
+				outstr[z++]=opnd1;
+				outstr[z++]=opnd2;
+				outstr[z++]=ch;
+				ct++;
+			}
+			else
+			{
+				opnd2=pop(&stk);
+				outstr[z++]=opnd2;
+				outstr[z++]=ch;
+			}
+		}
+	}
+	outstr[z]=;
+}
+
 void Penghitung::ParseInfix(Expression& E) {
 	stack<Token*> s1;
 	Expression s2;
