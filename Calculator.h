@@ -5,6 +5,19 @@
 #include "Parser.h"
 #include "Memori.h"
 
+/**
+ * Class Calculator
+ * 
+ * @class     Calculator calculator.h "calculator.h"
+ * @package   Token
+ * @brief     Kelas Abstrak yang digunakan untuk merepresentasikan bilangan
+ * @author    Satria Priambada
+ * @version   0.1
+ * @date      Maret 2015
+ * @warning   -
+ * 
+ */
+
 class Calculator {
 public:
 	//ctor
