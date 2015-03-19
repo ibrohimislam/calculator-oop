@@ -8,9 +8,9 @@
 /**
  * Class Calculator
  * 
- * @class     Calculator calculator.h "calculator.h"
- * @package   Token
- * @brief     Kelas Abstrak yang digunakan untuk merepresentasikan bilangan
+ * @class     Calculator Calculator.h "Calculator.h"
+ * @package   Parser
+ * @brief     Kelas utama kalkulator yang melakukan loop input-proses-output
  * @author    Satria Priambada
  * @version   0.1
  * @date      Maret 2015

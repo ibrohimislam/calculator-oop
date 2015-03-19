@@ -3,6 +3,19 @@
 
 #include <string>
 
+/**
+ * Class BilanganException
+ * 
+ * @class     BilanganException BilanganException.h "BilanganException.h"
+ * @package   Token
+ * @brief     Kelas exception spesifik class Bilangan
+ * @author    Satria Priambada
+ * @version   0.1
+ * @date      Maret 2015
+ * @warning   -
+ * 
+ */
+
 class BilanganException
 {
 public:
