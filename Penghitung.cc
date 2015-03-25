@@ -17,15 +17,11 @@ Penghitung::~Penghitung() {}
 // operator= tidak diperlukan karena tidak ada assignment
 
 double Penghitung::Calculate(Expression E) {
-	if(ModeMathLogic == logic) {
-		ParseInfix(E);
-	} else {
 		switch (ModeSintaks) {
 			case prefix : ParsePrefix(E); break;
 			case postfix : break;
 			case infix : ParseInfix(E); break;
 		}
-	}
 	return CalculatePostfix(E);
 }
 
@@ -65,7 +61,7 @@ double Penghitung::CalculateAtom(double a, double b, Operator* o) {
 		else if (o->GetJenisOperator() == Xor) 
 			return int(a) ^ int(b);
 		else
-			throw PenghitungException("Terdapat kesalahan pada ekspresi.");
+			throw PenghitungException("xxx Terdapat kesalahan pada ekspresi.");
 	}
 
 }
@@ -179,5 +175,12 @@ void Penghitung::ParseInfix(Expression& E) {
 		s2.AddToken(s1.top());
 		s1.pop();
 	}
+
+	for (int i = 0; i < s2.GetLength(); ++i)
+	{
+		Token* a = s2.GetToken(i);
+		std::cout << a->Display() << std::endl;
+	}
+
 	E = s2;
 }
