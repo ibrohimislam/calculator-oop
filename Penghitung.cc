@@ -18,9 +18,9 @@ Penghitung::~Penghitung() {}
 
 double Penghitung::Calculate(Expression E) {
 		switch (ModeSintaks) {
-			case prefix : ParsePrefix(E); break;
+			case prefix : ConvertPrefix(E); break;
 			case postfix : break;
-			case infix : ParseInfix(E); break;
+			case infix : ConvertInfix(E); break;
 		}
 	return CalculatePostfix(E);
 }
@@ -96,7 +96,7 @@ double Penghitung::CalculatePostfix(Expression& E) {
  *4.Find the second operand, opnd2, of the string.Convert it to postfix and cal it post2.
  *5.Concatenate post1, post2, and op.
  */
-void Penghitung::ParsePrefix(Expression& prefix)
+void Penghitung::ConvertPrefix(Expression& prefix)
 {
 	Expression postfix;
     stack<Token*> s; 
@@ -119,7 +119,7 @@ void Penghitung::ParsePrefix(Expression& prefix)
     prefix = postfix;
 }
 
-void Penghitung::ParseInfix(Expression& E) {
+void Penghitung::ConvertInfix(Expression& E) {
 	stack<Token*> s1;
 	Expression s2;
 
@@ -174,12 +174,6 @@ void Penghitung::ParseInfix(Expression& E) {
 	while (!s1.empty()) {
 		s2.AddToken(s1.top());
 		s1.pop();
-	}
-
-	for (int i = 0; i < s2.GetLength(); ++i)
-	{
-		Token* a = s2.GetToken(i);
-		std::cout << a->Display() << std::endl;
 	}
 
 	E = s2;

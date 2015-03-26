@@ -110,7 +110,7 @@ public:
 	 * @param Expression&
 	 */
 	 
-	void ParseInfix(Expression&);
+	void ConvertInfix(Expression&);
 	
 	/**
 	 * Prosedur ParsePrefix
@@ -121,7 +121,7 @@ public:
 	 * @param Expression&
 	 */
 	 
-	void ParsePrefix(Expression&);
+	void ConvertPrefix(Expression&);
 	
 	/**
 	 * Fungsi CalculateAtom
